@@ -1,0 +1,93 @@
+cards:
+  # Attack
+  - name: Black Mage
+    description: Attacks with 20 damage
+    image_url: ./images/black_mage.jpg
+    card_type: attack
+    own_mana: 0
+    own_gold: 0
+    own_stamina: 0
+    own_shield: 0
+    own_castle: 0
+    opp_mana: 0
+    opp_gold: 0
+    opp_stamina: 0
+    opp_shield: -20
+    opp_castle: 0
+    mana_cost: -6
+    gold_cost: 0
+    stamina_cost: 0
+    own_mana_rate: 0
+    own_gold_rate: 0
+    own_stamina_rate: 0
+    opp_mana_rate: 0
+    opp_gold_rate: 0
+    opp_stamina_rate: 0
+    attr_swap: null
+  - name: White Mage
+    description: Attacks with 12 damage. Heals castle 10.
+    image_url: ./images/white_mage.jpg
+    card_type: attack
+    own_mana: 0
+    own_gold: 0
+    own_stamina: 0
+    own_shield: 0
+    own_castle: 10
+    opp_mana: 0
+    opp_gold: 0
+    opp_stamina: 0
+    opp_shield: -12
+    opp_castle: 0
+    mana_cost: -6
+    gold_cost: 0
+    stamina_cost: 0
+    own_mana_rate: 0
+    own_gold_rate: 0
+    own_stamina_rate: 0
+    opp_mana_rate: 0
+    opp_gold_rate: 0
+    opp_stamina_rate: 0
+    attr_swap: null
+  #
+  # - name: Warrior
+  # - name: Thief
+  #   description: Attack with med. damage, reduce enemies gold and add to own
+  # - name: Chocobo
+  #   description: Weak Attack
+  #
+  # - name: Paladin
+  #   description: Strong attack
+  # - name: Samurai
+  #
+  # # Magic
+  # - name: Shield
+  #   description: Boost shield by x
+  # - name: Cure
+  #   description: Boost castle by x
+  # - name: Muddle
+  #   description: Swap gold attribute
+  # - name: Imp
+  #   description: Reduce opponent stamina regen rate by x
+  # - name: Regen
+  #   description: All attribute regens boosted by x
+  # - name: Absorb
+  #   description: Opponent magic minus x, owner magic plus x
+  # - name: Quake
+  #   description: X damage to both, bypass shield
+  #
+  # # Item
+  # - name: Potion
+  #   description: Boost castle by x
+  # - name: Elixir
+  #   description: Boost castle, shield, and magic by x
+  # - name: Smoke Bomb
+  #   description: Reduce all opponent attributes by 3
+  # - name: Ether
+  #   description: Boost magic by x
+  # - name: Magicite Shard
+  #   description: Boost random regen rate by x
+  # - name: Poison
+  #   description: Reduce enemy castle, stamina and magic by x
+  # - name: Super Ball
+  #   description: Damages everyone (attacks shield)
+  #

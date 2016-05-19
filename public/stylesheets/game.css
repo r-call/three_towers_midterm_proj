@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900);
+
+.frame {
+  position: relative;
+  margin: 0 auto;
+  width:1000px;
+  height: 600px;
+  background-color: white;
+  border: 1px solid black;
+}
+.subtle-shadow {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.basic-card-div {
+  border-radius: 4px;
+  -webkit-user-select:none;
+}
+
+.card {
+  background-color: #49825F;
+  cursor:default;
+  width: 170px;
+  height: 280px;
+  margin: 0 auto;
+  transform: rotate(10deg);
+  top:150px;
+  position:relative;
+  padding-top: 2px;
+  /*display:inline-block;*/
+
+}
+
+.card-image {
+  background-color:white;
+  width: 90%;
+  height: 40%;
+  margin: 4% auto;
+}
+
+.card-image-image {
+  -webkit-user-drag: none;
+  display: block;
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.card-cost-band {
+  background-color: #F7F7F7;
+  width: 90%;
+  height: 7%;
+  margin: 4% auto;
+}
+.card-description {
+  background-color: #F7F7F7;
+  width: 90%;
+  height: 30%;
+  margin: 4% auto;
+  vertical-align: bottom;
+  position: relative;
+}
+.card-description-text {
+  font-family: Lato;
+  font-size: 11px;
+  color:#505050;
+  padding:4px;
+  margin:0;
+}
+/*
+.card-bottom-band {
+  background-color: #F7F7F7;
+  width: 90%;
+  height: 10%;
+  margin: 4% auto;
+}*/
