@@ -1,3 +1,7 @@
-seed_file = Rails.root.join('db', 'seeds', 'categories.yml')
-config = YAML::load_file(seed_file)
-Category.create!(config)
+require 'yaml'
+require_relative '../app/models/card'
+
+cards = YAML::load_file('./db/seeds/cards.yml')
+cards.each do |card|
+  Card.create!(card)
+end
