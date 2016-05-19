@@ -17,10 +17,11 @@ puts card3.card.description
 puts card4.card.description
 puts card5.card.description
 puts player1.inspect
-puts player2.inspect
+
 puts resources_available?(player1, card1)
 game_action(player1, player2, card1)
-game_action(player2, player1, card3)
+game_action(player2, player1, card4)
+game_action(player1, player2, card1)
 puts player1.inspect
 puts player2.inspect
 puts player1.inspect
