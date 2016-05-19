@@ -1,0 +1,530 @@
+# Attack
+
+- name: Black Mage
+  description: Attacks with 20 damage.
+  image_url: ./images/black_mage.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -20
+  opp_castle: 0
+  mana_cost: -6
+  gold_cost: 0
+  stamina_cost: -2
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: White Mage
+  description: Attacks with 12 damage. Heals castle 10.
+  image_url: ./images/white_mage.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 10
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -12
+  opp_castle: 0
+  mana_cost: -6
+  gold_cost: 0
+  stamina_cost: -2
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Warrior
+  description: Attacks with 20 damage.
+  image_url: ./images/warrior.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -20
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: 0
+  stamina_cost: -7
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Thief
+  description: Attacks castle directly with 10 damage. Steals 5 gold from opponent.
+  image_url: ./images/thief.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 5
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: -5
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: -10
+  mana_cost: 0
+  gold_cost: 0
+  stamina_cost: -5
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Chocobo
+  description: Attacks with 5 damage.
+  image_url: ./images/chocobo.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -5
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -1
+  stamina_cost: -1
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Paladin
+  description: Attacks with 30 damage.
+  image_url: ./images/paladin.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -30
+  opp_castle: 0
+  mana_cost: -5
+  gold_cost: 0
+  stamina_cost: -5
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Mercenary
+  description: Attacks with 25 damage.
+  image_url: ./images/mercenary.jpg
+  card_type: attack
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -25
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -8
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+# Magic
+
+- name: Shield
+  description: Increase shield by 20.
+  image_url: ./images/shield.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 20
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -7
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Cure
+  description: Increase castle health by 15.
+  image_url: ./images/cure.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 15
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -6
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Muddle
+  description: Swap gold with opponent.
+  image_url: ./images/muddle.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -6
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: gold
+
+- name: Imp
+  description: Reduce opponent stamina regeneration rate by 1.
+  image_url: ./images/imp.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -5
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: -1
+  attr_swap: null
+
+- name: Regen
+  description: Boost stamina attribute regeneration rate by 2.
+  image_url: ./images/regen.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -7
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 2
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Absorb
+  description: Reduce opponents mana regeneration by 1. Own mana regeneration increases by 1.
+  image_url: ./images/absorb.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -5
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 1
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: -1
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Quake
+  description: Does 15 damage to both parties. Bypasses shield.
+  image_url: ./images/quake.jpg
+  card_type: magic
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: -15
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: -15
+  mana_cost: -5
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+# Item
+
+- name: Potion
+  description: Boost castle by 15
+  image_url: ./images/potion.jpg
+  card_type: item
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 15
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -6
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Elixir
+  description: Increases mana by 5, shield by 15, castle by 20.
+  image_url: ./images/elixir.jpg
+  card_type: item
+  own_mana: 5
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 15
+  own_castle: 20
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -7
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Smoke Bomb
+  description: Reduce opponent mana, gold, and stamina by 5.
+  image_url: ./images/smoke_bomb.jpg
+  card_type: item
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: -5
+  opp_gold: -5
+  opp_stamina: -5
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -6
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Ether
+  description: Boost mana by 10.
+  image_url: ./images/ether.jpg
+  card_type: item
+  own_mana: 10
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -6
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Magicite Shard
+  description: Boosts mana regen rate by 2.
+  image_url: ./images/magicite.jpg
+  card_type: item
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -8
+  stamina_cost: 0
+  own_mana_rate: 2
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Poison
+  description: Enemy castle -10, stamina -7, and mana -7.
+  image_url: ./images/poison.jpg
+  card_type: item
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: 0
+  own_castle: 0
+  opp_mana: -7
+  opp_gold: 0
+  opp_stamina: -7
+  opp_shield: 0
+  opp_castle: -10
+  mana_cost: 0
+  gold_cost: -6
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Super Ball
+  description: Does 20 damage to both parties.
+  image_url: ./images/super_ball.jpg
+  card_type: item
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: -20
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -20
+  opp_castle: 0
+  mana_cost: 0
+  gold_cost: -5
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
