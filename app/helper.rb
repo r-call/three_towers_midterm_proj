@@ -29,4 +29,9 @@ module Helpers
     opponent.gold += card.card.opp_gold.to_i
   end
 
+
+  def win_condition(opponent)
+    opponent.castle == 0
+  end
+  
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519191941) do
+ActiveRecord::Schema.define(version: 20160520015040) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
@@ -54,7 +54,10 @@ ActiveRecord::Schema.define(version: 20160519191941) do
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "game_id"
   end
+
+  add_index "held_cards", ["game_id"], name: "index_held_cards_on_game_id"
 
   create_table "players", force: :cascade do |t|
     t.integer  "castle",             default: 100
