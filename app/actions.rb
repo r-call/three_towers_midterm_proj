@@ -3,7 +3,7 @@
 
 get '/game' do
   @player = Player.create
-  session[:player_id] = @player.id
+  session[:player_id] ||= @player.id
   # if there's a game with an open P2 spot, take that spot
   # otherwise create new game as P1
   first_available_game = Game.where(player_2_id: nil).first
@@ -14,9 +14,9 @@ get '/game' do
     @game.update(player_2_id: @player.id)
   end
 
-  @player.generate_hand
+  @player.generate_hand(@game.id)
 
-  redirect "game/99"
+  redirect "game/1"
   # redirect "game/#{@game.id}"
 end
 

@@ -59,16 +59,13 @@ class Player < ActiveRecord::Base
   end
 
 
-end
-=======
-  @turn = Game.player_1
 
-  def generate_hand
-    5.times { generate_card }
+  def generate_hand(game_id)
+    5.times { generate_card(game_id) }
   end
 
-  def generate_card
-    HeldCard.new(random_card_num)
+  def generate_card(game_id)
+    HeldCard.create(card_id: random_card_num, player_id: id, game_id: game_id)
   end
 
   # unfinished
@@ -76,7 +73,7 @@ end
     hand = []
     #name, desc, url, type, mana_cost
     # gold_cost, stamina_cost (positive values)
-    HeldCard.where(player_id: params[:id], game_id: game_id).each do |card|
+    HeldCard.where(player_id: id, game_id: game_id).each do |card|
       hand << card_hash(card)
     end
     hand
@@ -87,16 +84,15 @@ end
   end
 
   def card_hash(card)
-    name = card.name
-    desc = card.description
-    url = card.image_url
-    type = card.card_type
-    mana_cost *= card.mana_cost * -1
-    gold_cost *= card.gold_cost * -1
-    stamina_cost *= card.stamina_cost * -1
+    name = card.card.name
+    desc = card.card.description
+    url = card.card.image_url
+    type = card.card.card_type
+    mana_cost = card.card.mana_cost * -1
+    gold_cost = card.card.gold_cost * -1
+    stamina_cost = card.card.stamina_cost * -1
 
-    hash = {}
-    hash << {:name => name,
+    hash = {:name => name,
       :description => desc,
       :image_url => url,
       :card_type => type,
@@ -130,5 +126,4 @@ end
     opponent.gold += card.card.opp_gold.to_i
   end
 
-  end
 end
