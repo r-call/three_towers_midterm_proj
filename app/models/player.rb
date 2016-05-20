@@ -13,12 +13,6 @@ class Player < ActiveRecord::Base
     end
   end
 
-  # def find_card_in_array(card_num, game_id)
-  #   hand_cards = show_cards(game_id)
-  #   h_id = hand_cards[card_num - 1]["id"]
-  #   HeldCard.find(h_id)
-  # end
-
   def destroy_card(card_num, game_id)
     hand_cards = show_cards(game_id)
     h_id = hand_cards[card_num - 1]["id"]
@@ -33,11 +27,8 @@ class Player < ActiveRecord::Base
     HeldCard.create(card_id: random_card_num, player_id: id, game_id: game_id)
   end
 
-  # unfinished
   def show_cards(game_id)
     hand = []
-    #name, desc, url, type, mana_cost
-    # gold_cost, stamina_cost (positive values)
     HeldCard.where(player_id: id, game_id: game_id).each do |card|
       hand << card_hash(card)
       hand = hand.sort_by { |k| k["id"] }
@@ -93,54 +84,5 @@ class Player < ActiveRecord::Base
     opponent.mana += card.card.opp_mana.to_i
     opponent.gold += card.card.opp_gold.to_i
   end
-
-  # #Use ActiveRecord .to_hash to get get card.
-  # #=> returns an array of hashes with result of query
-  # #then pass array of single hash into play_card
-  # def play_card (card, game)
-  #   #TODO: check if it is valid to play this card
-  #   opp = find_opp(game)
-
-  #   card_hash = card_to_hash(card)
-
-  #   card_hash.each_pair do |key,value|
-  #     binding.pry
-  #     case key
-  #     when "own_mana"
-  #       mana += value
-  #     when "own_gold"
-  #       gold += value
-  #     when "own_stamina"
-  #       stamina += value
-  #     when "own_shield"
-  #       shield += value
-  #     when "own_castle"
-  #       own_castle += value
-  #     when "opp_mana"
-  #       opp.opp_mana += value
-  #     when "opp_gold"
-  #       opp.opp_gold += value
-  #     when "opp_stamina"
-  #       opp.opp_stamina += value
-  #     when "opp_shield"
-  #       opp.opp_shield += value
-  #     when "opp_castle"
-  #       opp.opp_castle += value
-  #     when "mana_cost"
-  #       mana += value
-  #     when "gold_cost"
-  #       gold += value
-  #     when "stamina_cost"
-  #       stamina += value
-  #     end
-  #   end
-  # end
-
-
-
-  # def card_to_hash (card)
-  #   c_hash = {}
-  #   card.attributes.each {|k,v| c_hash[k] = v}
-  # end
 
 end

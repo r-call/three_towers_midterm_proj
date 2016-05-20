@@ -1,8 +1,8 @@
 # post turn data (card, action of turn?), player id, and game id here
 
 get '/games/:id/turn' do
-  # @game = Game.find(params[:id])
-  # @game.game_action(params[:action],session[:player_id],params[:card])
+  @game = Game.find(params[:id])
+  @game.game_action(params[:action],session[:player_id],params[:card])
   puts params[:card]
   puts params[:action]
   redirect '/games/:id/reload'
