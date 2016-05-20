@@ -4,28 +4,44 @@
 get '/game' do
   @player = Player.create
   session[:player_id] = @player.id
-  # TO DO: LOGIC TO FIGURE OUT HOW TO ASSIGN PLAYERS TO GAME NUMBERS
-  # redirecting to game 99 as a hack
-  redirect 'game/99'
+  # if there's a game with an open P2 spot, take that spot
+  # otherwise create new game as P1
+  first_available_game = Game.where(player_2_id: nil).first
+  if first_available_game.nil?
+    @game = Game.create(player_1_id: @player.id)
+  else
+    @game = first_available_game
+    @game.update(player_2_id: @player.id)
+  end
+
+  @player.generate_hand
+
+  redirect "game/99"
+  # redirect "game/#{@game.id}"
 end
 
 # the main game view is shown at '/game/:id'
 
 get '/game/:id' do
-  File.read(File.join('public', 'game.html'))
-  # TO DO: initial load of all game data
-  @player = Player.find(session[:id])
+  @player = Player.find(session[:player_id])
+  @cards = @player.show_cards(params[:id])
+  # @opponent = @player.find_opp(@game.id)
 
+  erb :'game/index'
 end
 
 # post turn data (card, action of turn?), player id, and game id here
 
-post '/game/:id/turn' do
+get '/game/:id/turn' do
+  # @game = Game.find(params[:id])
+  # @game.game_action(params[:move],sessions[:player_id],params[:card])
   puts params[:card]
-  puts params[:id]
-  puts session[:player_id]
+  redirect '/game/:id/reload'
 end
 
 get '/game/:id/reload' do
-
+  # @player = Player.find(session[:player_id])
+  # @cards = @player.show_cards(@game.id)
+  # @opponent = @player.find_opp(@game.id)
+  "Reloads once per second"
 end
