@@ -33,4 +33,5 @@ module Helpers
   def win_condition(opponent)
     opponent.castle == 0
   end
+  
 end
