@@ -1,7 +1,6 @@
+require_relative './actions/api'
 
 #'/game' is the entry point. A new player is created when you visit. Your player ID is stored as a session cookie.
-require 'pry'
-
 get '/game' do
   if session[:player_id].nil?
     @player = Player.create
@@ -21,8 +20,6 @@ get '/game' do
     @player.generate_hand(@game.id)
   end
 
-
-
   redirect "game/#{@game.id}"
 end
 
@@ -32,23 +29,6 @@ get '/game/:id' do
   @player = Player.find(session[:player_id])
   @cards = @player.show_cards(params[:id])
   @opponent = @player.find_opp(params[:id])
-  binding.pry
 
   erb :'game/index'
-end
-
-# post turn data (card, action of turn?), player id, and game id here
-
-get '/game/:id/turn' do
-  # @game = Game.find(params[:id])
-  # @game.game_action(params[:move],sessions[:player_id],params[:card])
-  puts params[:card]
-  redirect '/game/:id/reload'
-end
-
-get '/game/:id/reload' do
-  @player = Player.find(session[:player_id])
-  @cards = @player.show_cards(params[:id])
-  body @cards.to_json
-  # @opponent = @player.find_opp(@game.id)
 end
