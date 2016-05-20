@@ -21,6 +21,7 @@ class Player < ActiveRecord::Base
     HeldCard.where(player_id: params[:id]).each do |card|  
       hand << card_hash(card)
     end
+    hand
   end
 
   def random_card_num
