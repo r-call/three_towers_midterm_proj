@@ -28,14 +28,6 @@ class Player < ActiveRecord::Base
     rand(1..Card.count)
   end
 
-  def find_opp(game)   
-    if game.player_1 == self    
-      game.player_2   
-    else    
-      game.player_1   
-    end   
-  end
-
   def card_hash(card)
     name = card.name
     desc = card.description
@@ -55,6 +47,30 @@ class Player < ActiveRecord::Base
       :stamina_cost => stamina_cost}
   end
 
+  def play_card(card, game_id)
+    #needs game_id
+    opponent = find_opp(game_id)
+
+    castle += card.card.own_castle.to_i
+    shield += card.card.own_shield.to_i
+    stamina += card.card.own_stamina.to_i
+    mana += card.card.own_mana.to_i
+    gold += card.card.own_gold.to_i
+    stamina_regen_rate += card.card.own_stamina_rate.to_i
+    mana_regen_rate += card.card.own_mana_rate.to_i
+    gold_regen_rate += card.card.own_gold_rate.to_i
+    stamina += card.card.stamina_cost.to_i
+    mana += card.card.mana_cost.to_i
+    gold += card.card.gold_cost.to_i
+    opponent.castle += card.card.opp_castle.to_i
+    opponent.shield += card.card.opp_shield.to_i
+    opponent.stamina_regen_rate += card.card.opp_stamina_rate.to_i
+    opponent.mana_regen_rate += card.card.opp_mana_rate.to_i
+    opponent.gold_regen_rate += card.card.opp_gold_rate.to_i
+    opponent.stamina += card.card.opp_stamina.to_i
+    opponent.mana += card.card.opp_mana.to_i
+    opponent.gold += card.card.opp_gold.to_i
+  end
 
   end  
 end 
