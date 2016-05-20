@@ -30,4 +30,31 @@ class Game < ActiveRecord::Base
       #do nothing
     end
   end
+
+  def turn_tracker
+    a = Player.find_by(player_1_id)
+    b = Player.find_by(player_2_id)
+
+    if last_turn_player_id == a.id
+      last_turn_player_id = b.id
+      game.update
+    else
+      last_turn_player_id = a.id
+      game.update
+    end
+  end
+
+  def first_player_setter
+    if last_turn_player_id = nil
+      last_turn_player_id = randomize_first_turn_player
+    end
+  end
+
+  def randomize_first_turn_player
+    a = Player.find_by(player_1_id)
+    b = Player.find_by(player_2_id)
+    num = rand(1..50)
+    num > 25 ? a.id : b.id
+  end
+
 end
