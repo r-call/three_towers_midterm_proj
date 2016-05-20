@@ -18,6 +18,6 @@ $(document).ready(function() {
           console.log(data);
       }
     });
-}, 1000);//time in milliseconds
+}, 10000);//time in milliseconds
 
 });
