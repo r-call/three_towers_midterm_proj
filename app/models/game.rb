@@ -4,11 +4,11 @@ class Game < ActiveRecord::Base
   has_many :held_cards
 
   def player_1
-    Player.find_by(player_1_id)
+    Player.find_by_id(player_1_id)
   end
 
   def player_2
-    Player.find_by(player_2_id)
+    Player.find_by_id(player_2_id)
   end
 
   def game_action(move, player_id, card_num)
@@ -32,8 +32,8 @@ class Game < ActiveRecord::Base
   end
 
   def turn_tracker
-    a = Player.find_by(player_1_id)
-    b = Player.find_by(player_2_id)
+    a = player_1
+    b = player_2
 
     if last_turn_player_id == a.id
       last_turn_player_id = b.id
@@ -51,10 +51,12 @@ class Game < ActiveRecord::Base
   end
 
   def randomize_first_turn_player
-    a = Player.find_by(player_1_id)
-    b = Player.find_by(player_2_id)
-    num = rand(1..50)
-    num > 25 ? a.id : b.id
+    a = player_1
+    b = player_2
+    if a && b
+      num = rand(1..50)
+      num > 25 ? a.id : b.id
+    end
   end
 
 end

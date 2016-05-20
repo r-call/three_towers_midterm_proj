@@ -27,19 +27,19 @@
   <div id="indicator-box-p2" class="indicator-box">
 
     <div id="castle-indicator-p2" class="castle-indicator p2-indicator indicator">
-      <%= @opponent.castle %>
+      <%= @opponent ? @opponent.castle : 'X ' %>
     </div>
     <div id="shield-indicator-p2" class="shield-indicator p2-indicator indicator">
-      <%= @opponent.shield %>
+      <%= @opponent ? @opponent.shield : 'X ' %>
     </div>
     <div id="mana-indicator-p2" class="mana-indicator p2-indicator indicator">
-      <%= @opponent.mana %>
+      <%= @opponent ? @opponent.mana : 'X ' %>
     </div>
     <div id="stamina-indicator-p2" class="stamina-indicator p2-indicator indicator">
-      <%= @opponent.stamina %>
+      <%= @opponent ? @opponent.stamina : 'X ' %>
     </div>
     <div id="gold-indicator-p2" class="gold-indicator p2-indicator indicator">
-      <%= @opponent.gold %>
+      <%= @opponent ? @opponent.gold : 'X ' %>
     </div>
 
   </div>

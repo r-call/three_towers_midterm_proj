@@ -64,25 +64,27 @@ class Player < ActiveRecord::Base
     #needs game_id
     opponent = find_opp(game_id)
 
-    castle += card.card.own_castle.to_i
-    shield += card.card.own_shield.to_i
-    stamina += card.card.own_stamina.to_i
-    mana += card.card.own_mana.to_i
-    gold += card.card.own_gold.to_i
-    stamina_regen_rate += card.card.own_stamina_rate.to_i
-    mana_regen_rate += card.card.own_mana_rate.to_i
-    gold_regen_rate += card.card.own_gold_rate.to_i
-    stamina += card.card.stamina_cost.to_i
-    mana += card.card.mana_cost.to_i
-    gold += card.card.gold_cost.to_i
-    opponent.castle += card.card.opp_castle.to_i
-    opponent.shield += card.card.opp_shield.to_i
-    opponent.stamina_regen_rate += card.card.opp_stamina_rate.to_i
-    opponent.mana_regen_rate += card.card.opp_mana_rate.to_i
-    opponent.gold_regen_rate += card.card.opp_gold_rate.to_i
-    opponent.stamina += card.card.opp_stamina.to_i
-    opponent.mana += card.card.opp_mana.to_i
-    opponent.gold += card.card.opp_gold.to_i
+    self.castle += card.own_castle.to_i
+    self.shield += card.own_shield.to_i
+    self.stamina += card.own_stamina.to_i
+    self.mana += card.own_mana.to_i
+    self.gold += card.own_gold.to_i
+    self.stamina_regen_rate += card.own_stamina_rate.to_i
+    self.mana_regen_rate += card.own_mana_rate.to_i
+    self.gold_regen_rate += card.own_gold_rate.to_i
+    self.stamina += card.stamina_cost.to_i
+    self.mana += card.mana_cost.to_i
+    self.gold += card.gold_cost.to_i
+    opponent.castle += card.opp_castle.to_i
+    opponent.shield += card.opp_shield.to_i
+    opponent.stamina_regen_rate += card.opp_stamina_rate.to_i
+    opponent.mana_regen_rate += card.opp_mana_rate.to_i
+    opponent.gold_regen_rate += card.opp_gold_rate.to_i
+    opponent.stamina += card.opp_stamina.to_i
+    opponent.mana += card.opp_mana.to_i
+    opponent.gold += card.opp_gold.to_i
+    self.save
+    opponent.save
   end
 
 end

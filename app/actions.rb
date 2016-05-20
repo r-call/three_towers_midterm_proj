@@ -16,7 +16,13 @@ post '/games' do
   # if there's a game with an open P2 spot, take that spot
   # otherwise create new game as P1
   first_available_game = Game.where(player_2_id: nil).where.not(player_1_id: @player.id).first
-  if first_available_game.nil?
+  if Game.find_by(player_1_id: @player.id)
+    @game = Game.find_by(player_1_id: @player.id)
+  elsif
+    Game.find_by(player_2_id: @player.id)
+    @game = Game.find_by(player_2_id: @player.id)
+  elsif
+    first_available_game.nil?
     @game = Game.create(player_1_id: @player.id)
     @player.generate_hand(@game.id)
   else
