@@ -3,7 +3,7 @@ $(document).ready(function() {
   // ultimately, we need to distinguish between a discard and play
   $('.card').click(function() {
     var card_num = $(this).attr('value');
-    $.get("1/turn",{"card":card_num,"action":"play"});
+    $.get("<%= @game.id %>/turn",{"card":card_num,"action":"play"});
   });
 
   // refresh every second
@@ -11,7 +11,7 @@ $(document).ready(function() {
   {
     $.ajax({
       type:"get",
-      url:"1/reload",
+      url:"<%= @game.id %>/reload",
       datatype:"html",
       success:function(data)
       {

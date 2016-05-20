@@ -2,8 +2,9 @@
 
 get '/game/:id/turn' do
   # @game = Game.find(params[:id])
-  # @game.game_action(params[:move],sessions[:player_id],params[:card])
+  # @game.game_action(params[:action],session[:player_id],params[:card])
   puts params[:card]
+  puts params[:action]
   redirect '/game/:id/reload'
 end
 
