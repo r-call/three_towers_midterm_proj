@@ -7,3 +7,5 @@
 .DS_Store
 public/assets
 
+test/db/db.sqlite3
+
