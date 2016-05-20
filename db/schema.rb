@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160519191941) do
   end
 
   create_table "held_cards", force: :cascade do |t|
-    t.integer  "cards_id"
-    t.integer  "players_id"
+    t.integer  "card_id"
+    t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
