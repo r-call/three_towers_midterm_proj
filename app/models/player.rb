@@ -14,11 +14,11 @@ class Player < ActiveRecord::Base
   end
   
   # unfinished
-  def show_cards
+  def show_cards(game_id)
     hand = []
     #name, desc, url, type, mana_cost
     # gold_cost, stamina_cost (positive values)
-    HeldCard.where(player_id: params[:id]).each do |card|  
+    HeldCard.where(player_id: params[:id], game_id: game_id).each do |card|  
       hand << card_hash(card)
     end
     hand
