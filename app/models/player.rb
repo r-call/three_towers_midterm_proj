@@ -1,3 +1,4 @@
+require 'pry'
 class Player < ActiveRecord::Base
   has_many :cards
   has_many :held_cards, through: :cards
@@ -7,6 +8,7 @@ class Player < ActiveRecord::Base
     game = Game.find(game_id)
     if game.player_1 == self
       game.player_2
+      binding.pry
     else
       game.player_1
     end
