@@ -29,4 +29,12 @@ module Helpers
     opponent.gold += card.card.opp_gold.to_i
   end
 
+  def find_opp(game)
+    if game.player_1 == self
+      game.player_2
+    else
+      game.player_1
+    end
+  end
+  
 end
