@@ -2,7 +2,7 @@ require_relative './actions/api'
 
 #'/game' is the entry point. A new player is created when you visit. Your player ID is stored as a session cookie.
 get '/games/new' do
-  
+
   erb :'game/new'
 end
 
@@ -34,6 +34,7 @@ get '/games/:id' do
   @player = Player.find(session[:player_id])
   @cards = @player.show_cards(params[:id])
   @opponent = @player.find_opp(params[:id])
-
+  @game_id = params[:id]
+  
   erb :'game/index'
 end
