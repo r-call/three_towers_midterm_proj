@@ -5,7 +5,8 @@ class Player < ActiveRecord::Base
 
   def find_opp(game_id)
     game = Game.find(game_id)
-    if game.player_1 == self
+    if game.player_1.id == self.id
+      binding.pry
       game.player_2
     else
       game.player_1

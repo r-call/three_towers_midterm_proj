@@ -1,5 +1,6 @@
 
 #'/game' is the entry point. A new player is created when you visit. Your player ID is stored as a session cookie.
+require 'pry'
 
 get '/game' do
   if session[:player_id].nil?
@@ -31,6 +32,7 @@ get '/game/:id' do
   @player = Player.find(session[:player_id])
   @cards = @player.show_cards(params[:id])
   @opponent = @player.find_opp(params[:id])
+  binding.pry
 
   erb :'game/index'
 end
