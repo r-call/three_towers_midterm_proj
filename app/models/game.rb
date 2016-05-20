@@ -20,10 +20,12 @@ class Game < ActiveRecord::Base
     when "play"
       #perform card action, discard card, create new card
       player.play_card(card, id)
-
-
+      player.destroy_card(card_num, id)
+      player.generate_card(id)
     when "discard"
       #discard card, create new card
+      player.destroy_card(card_num, id)
+      player.generate_card(id)
     when "pass"
       #do nothing
     end

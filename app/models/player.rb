@@ -13,6 +13,17 @@ class Player < ActiveRecord::Base
     end
   end
 
+  # def find_card_in_array(card_num, game_id)
+  #   hand_cards = show_cards(game_id)
+  #   h_id = hand_cards[card_num - 1]["id"]
+  #   HeldCard.find(h_id)
+  # end
+
+  def destroy_card(card_num, game_id)
+    hand_cards = show_cards(game_id)
+    h_id = hand_cards[card_num - 1]["id"]
+    HeldCard.destroy(h_id)
+  end
 
   def generate_hand(game_id)
     5.times { generate_card(game_id) }
@@ -29,6 +40,7 @@ class Player < ActiveRecord::Base
     # gold_cost, stamina_cost (positive values)
     HeldCard.where(player_id: id, game_id: game_id).each do |card|
       hand << card_hash(card)
+      hand = hand.sort_by { |k| k["id"] }
     end
     hand
   end
@@ -38,6 +50,7 @@ class Player < ActiveRecord::Base
   end
 
   def card_hash(card)
+    id = card.card.id
     name = card.card.name
     desc = card.card.description
     url = card.card.image_url
@@ -46,7 +59,8 @@ class Player < ActiveRecord::Base
     gold_cost = card.card.gold_cost * -1
     stamina_cost = card.card.stamina_cost * -1
 
-    hash = {:name => name,
+    hash = {:id => id,
+      :name => name,
       :description => desc,
       :image_url => url,
       :card_type => type,
