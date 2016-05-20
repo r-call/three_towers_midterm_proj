@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900);
 
 .frame {
+  text-align: center;
   position: relative;
   margin: 0 auto;
-  width:1000px;
-  height: 600px;
+  width:1200px;
+  height: 650px;
   background-color: white;
   border: 1px solid black;
 }
@@ -16,17 +17,25 @@
   -webkit-user-select:none;
 }
 
+#bottom-frame {
+  bottom:50px;
+  position: absolute;
+  width: 100%;
+}
+
+#hand {
+  margin-left: auto;
+  margin-right: auto;
+}
 .card {
+  text-align:left;
   background-color: #49825F;
   cursor:default;
   width: 170px;
   height: 280px;
   margin: 0 auto;
-  transform: rotate(10deg);
-  top:150px;
-  position:relative;
   padding-top: 2px;
-  /*display:inline-block;*/
+  display:inline-block;
 
 }
 
@@ -73,3 +82,82 @@
   height: 10%;
   margin: 4% auto;
 }*/
+
+#hand-card-1 {
+  transform: translateY(35px) rotate(-10deg);
+}
+
+#hand-card-2 {
+  transform: translateY(10px) rotate(-5deg);
+}
+
+#hand-card-3 {
+}
+
+#hand-card-4 {
+  transform: translateY(10px)  rotate(5deg);
+}
+
+#hand-card-5 {
+  transform: translateY(35px) rotate(10deg);
+}
+
+#played-card {
+
+}
+
+#deck {
+
+}
+
+.indicator {
+  border: 1px solid black;
+}
+
+.indicator-box {
+  position: absolute;
+}
+
+#indicator-box-p1 {
+
+}
+
+#indicator-box-p2 {
+  right:0;
+
+}
+
+.p1-indicator {
+
+}
+
+.p2-indicator {
+  float: right;
+  position: relative;
+  clear: right;
+}
+.castle-indicator {
+  background-color: red;
+  height:150px;
+  width: 150px;
+}
+.shield-indicator {
+  background-color: blue;
+  height: 75px;
+  width: 75px;
+}
+.mana-indicator {
+  background-color: green;
+  height: 50px;
+  width: 50px;
+}
+.stamina-indicator {
+  background-color: grey;
+  height: 50px;
+  width: 50px;
+}
+.gold-indicator {
+  background-color: yellow;
+  height: 50px;
+  width: 50px;
+}
