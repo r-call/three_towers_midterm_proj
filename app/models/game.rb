@@ -11,16 +11,21 @@ class Game < ActiveRecord::Base
     Player.find_by(player_2_id)
   end
 
-  # def game_action(move, player_id, card_id)
-  #   player = Player.find(player_id)
-  #   card = Card.find(card_id)
+  def game_action(move, player_id, card_num)
+    #card_num = 1..5
+    player = Player.find(player_id)
+    card = Card.find(card_id)
 
-  #   case move
-  #   when "play"
-  #     player.play_card(card, id)
+    case move
+    when "play"
+      #perform card action, discard card, create new card
+      player.play_card(card, id)
 
-  #   when "discard"
-  #   when "pass"
-  #   end
-  # end
+
+    when "discard"
+      #discard card, create new card
+    when "pass"
+      #do nothing
+    end
+  end
 end
