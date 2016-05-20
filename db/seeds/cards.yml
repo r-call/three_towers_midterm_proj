@@ -2,7 +2,7 @@
 
 - name: Black Mage
   description: Attacks with 20 damage.
-  image_url: ./images/black_mage.jpg
+  image_url: /images/black_mage.jpg
   card_type: attack
   own_mana: 0
   own_gold: 0
@@ -27,7 +27,7 @@
 
 - name: White Mage
   description: Attacks with 12 damage. Heals castle 10.
-  image_url: ./images/white_mage.jpg
+  image_url: /images/white_mage.jpg
   card_type: attack
   own_mana: 0
   own_gold: 0
@@ -52,7 +52,7 @@
 
 - name: Warrior
   description: Attacks with 20 damage.
-  image_url: ./images/warrior.jpg
+  image_url: /images/warrior.jpg
   card_type: attack
   own_mana: 0
   own_gold: 0
@@ -77,7 +77,7 @@
 
 - name: Thief
   description: Attacks castle directly with 10 damage. Steals 5 gold from opponent.
-  image_url: ./images/thief.jpg
+  image_url: /images/thief.jpg
   card_type: attack
   own_mana: 0
   own_gold: 5
@@ -102,7 +102,7 @@
 
 - name: Chocobo
   description: Attacks with 5 damage.
-  image_url: ./images/chocobo.jpg
+  image_url: /images/chocobo.jpg
   card_type: attack
   own_mana: 0
   own_gold: 0
@@ -127,7 +127,7 @@
 
 - name: Paladin
   description: Attacks with 30 damage.
-  image_url: ./images/paladin.jpg
+  image_url: /images/paladin.jpg
   card_type: attack
   own_mana: 0
   own_gold: 0
@@ -152,7 +152,7 @@
 
 - name: Mercenary
   description: Attacks with 25 damage.
-  image_url: ./images/mercenary.jpg
+  image_url: /images/mercenary.jpg
   card_type: attack
   own_mana: 0
   own_gold: 0
@@ -179,7 +179,7 @@
 
 - name: Shield
   description: Increase shield by 20.
-  image_url: ./images/shield.jpg
+  image_url: /images/shield.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -204,7 +204,7 @@
 
 - name: Cure
   description: Increase castle health by 15.
-  image_url: ./images/cure.jpg
+  image_url: /images/cure.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -229,7 +229,7 @@
 
 - name: Muddle
   description: Swap gold with opponent.
-  image_url: ./images/muddle.jpg
+  image_url: /images/muddle.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -254,7 +254,7 @@
 
 - name: Imp
   description: Reduce opponent stamina regeneration rate by 1.
-  image_url: ./images/imp.jpg
+  image_url: /images/imp.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -279,7 +279,7 @@
 
 - name: Regen
   description: Boost stamina attribute regeneration rate by 2.
-  image_url: ./images/regen.jpg
+  image_url: /images/regen.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -304,7 +304,7 @@
 
 - name: Absorb
   description: Reduce opponents mana regeneration by 1. Own mana regeneration increases by 1.
-  image_url: ./images/absorb.jpg
+  image_url: /images/absorb.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -329,7 +329,7 @@
 
 - name: Quake
   description: Does 15 damage to both parties. Bypasses shield.
-  image_url: ./images/quake.jpg
+  image_url: /images/quake.jpg
   card_type: magic
   own_mana: 0
   own_gold: 0
@@ -356,7 +356,7 @@
 
 - name: Potion
   description: Boost castle by 15
-  image_url: ./images/potion.jpg
+  image_url: /images/potion.jpg
   card_type: item
   own_mana: 0
   own_gold: 0
@@ -381,7 +381,7 @@
 
 - name: Elixir
   description: Increases mana by 5, shield by 15, castle by 20.
-  image_url: ./images/elixir.jpg
+  image_url: /images/elixir.jpg
   card_type: item
   own_mana: 5
   own_gold: 0
@@ -406,7 +406,7 @@
 
 - name: Smoke Bomb
   description: Reduce opponent mana, gold, and stamina by 5.
-  image_url: ./images/smoke_bomb.jpg
+  image_url: /images/smoke_bomb.jpg
   card_type: item
   own_mana: 0
   own_gold: 0
@@ -431,7 +431,7 @@
 
 - name: Ether
   description: Boost mana by 10.
-  image_url: ./images/ether.jpg
+  image_url: /images/ether.jpg
   card_type: item
   own_mana: 10
   own_gold: 0
@@ -456,7 +456,7 @@
 
 - name: Magicite Shard
   description: Boosts mana regen rate by 2.
-  image_url: ./images/magicite.jpg
+  image_url: /images/magicite.jpg
   card_type: item
   own_mana: 0
   own_gold: 0
@@ -481,7 +481,7 @@
 
 - name: Poison
   description: Enemy castle -10, stamina -7, and mana -7.
-  image_url: ./images/poison.jpg
+  image_url: /images/poison.jpg
   card_type: item
   own_mana: 0
   own_gold: 0
@@ -506,7 +506,7 @@
 
 - name: Super Ball
   description: Does 20 damage to both parties.
-  image_url: ./images/super_ball.jpg
+  image_url: /images/super_ball.jpg
   card_type: item
   own_mana: 0
   own_gold: 0
