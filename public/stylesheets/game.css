@@ -110,13 +110,26 @@
 #hand-card-5 {
   transform: translateY(35px) rotate(10deg);
 }
+#player-card-container {
+  display: inline-block;
+}
 
 #played-card {
-
+  font-family: Futura;
+  font-size: 40px;
+  text-align: center;
+  line-height: 280px;
+  vertical-align: middle;
 }
 
 #deck {
-
+  font-family: Futura;
+  font-size: 40px;
+  font-family: Futura;
+  font-size: 40px;
+  text-align: center;
+  line-height: 280px;
+  vertical-align: middle;
 }
 
 .indicator {

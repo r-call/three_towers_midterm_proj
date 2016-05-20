@@ -3,7 +3,8 @@ class Player < ActiveRecord::Base
   has_many :held_cards, through: :cards
   has_many :games
 
-  def find_opp(game)
+  def find_opp(game_id)
+    game = Game.find(game_id)
     if game.player_1 == self
       game.player_2
     else

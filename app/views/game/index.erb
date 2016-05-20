@@ -3,19 +3,23 @@
 
 <div class="frame">
   <div id="indicator-box-p1" class="indicator-box">
-
+    castle
     <div id="castle-indicator-p1" class="castle-indicator p1-indicator indicator">
       <%= @player.castle %>
     </div>
+    shield
     <div id="shield-indicator-p1" class="shield-indicator p1-indicator indicator">
       <%= @player.shield %>
     </div>
+    mana
     <div id="mana-indicator-p1" class="mana-indicator p1-indicator indicator">
       <%= @player.mana %>
     </div>
+    stamina
     <div id="stamina-indicator-p1" class="stamina-indicator p1-indicator indicator">
       <%= @player.stamina %>
     </div>
+    gold
     <div id="gold-indicator-p1" class="gold-indicator p1-indicator indicator">
       <%= @player.gold %>
     </div>
@@ -25,21 +29,28 @@
   <div id="indicator-box-p2" class="indicator-box">
 
     <div id="castle-indicator-p2" class="castle-indicator p2-indicator indicator">
+      <%= @opponent.castle %>
     </div>
     <div id="shield-indicator-p2" class="shield-indicator p2-indicator indicator">
+      <%= @opponent.shield %>
     </div>
     <div id="mana-indicator-p2" class="mana-indicator p2-indicator indicator">
+      <%= @opponent.mana %>
     </div>
     <div id="stamina-indicator-p2" class="stamina-indicator p2-indicator indicator">
+      <%= @opponent.stamina %>
     </div>
     <div id="gold-indicator-p2" class="gold-indicator p2-indicator indicator">
+      <%= @opponent.gold %>
     </div>
 
   </div>
 
   <div id="deck" class="card">DECK
   </div>
-  <div id="played-card" class="card">PLAYED
+  <div id="player-card-container">
+    <div id="played-card" class="card">PLAYED
+    </div>
   </div>
   <div id="bottom-frame">
     <div id="hand">

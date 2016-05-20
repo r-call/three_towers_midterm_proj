@@ -10,7 +10,7 @@ get '/game' do
   end
   # if there's a game with an open P2 spot, take that spot
   # otherwise create new game as P1
-  first_available_game = Game.where(player_1_id: !@player.id, player_2_id: nil).first
+  first_available_game = Game.where(player_2_id: nil).where.not(player_1_id: @player.id).first
   if first_available_game.nil?
     @game = Game.create(player_1_id: @player.id)
     @player.generate_hand(@game.id)
@@ -22,8 +22,7 @@ get '/game' do
 
 
 
-  redirect "game/1"
-  # redirect "game/#{@game.id}"
+  redirect "game/#{@game.id}"
 end
 
 # the main game view is shown at '/game/:id'
@@ -31,7 +30,7 @@ end
 get '/game/:id' do
   @player = Player.find(session[:player_id])
   @cards = @player.show_cards(params[:id])
-  # @opponent = @player.find_opp(params[:id])
+  @opponent = @player.find_opp(params[:id])
 
   erb :'game/index'
 end
@@ -46,8 +45,8 @@ get '/game/:id/turn' do
 end
 
 get '/game/:id/reload' do
-  # @player = Player.find(session[:player_id])
-  # @cards = @player.show_cards(@game.id)
+  @player = Player.find(session[:player_id])
+  @cards = @player.show_cards(params[:id])
+  body @cards.to_json
   # @opponent = @player.find_opp(@game.id)
-  "Reloads once per second"
 end
