@@ -29,4 +29,11 @@ module Helpers
     opponent.gold += card.card.opp_gold.to_i
   end
 
+  def turn_player(player1, player2)
+    
+  end
+
+  def win_condition(opponent)
+    opponent.castle == 0
+  end
 end
