@@ -35,6 +35,6 @@ get '/games/:id' do
   @cards = @player.show_cards(params[:id])
   @opponent = @player.find_opp(params[:id])
   @game_id = params[:id]
-  
+
   erb :'game/index'
 end

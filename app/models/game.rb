@@ -14,7 +14,7 @@ class Game < ActiveRecord::Base
   def game_action(move, player_id, card_num)
     #card_num = 1..5
     player = Player.find(player_id)
-    card = Card.find(card_id)
+    card = Card.find(card_num)
 
     case move
     when "play"
