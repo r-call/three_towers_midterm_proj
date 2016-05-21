@@ -1,10 +1,12 @@
 $(document).ready(function() {
   var game_id = $("#data").attr('game-id');
+  var turn_path = game_id.concat("/turn");
+  var reload_path = game_id.concat("/reload");
   // click card to post data
   // ultimately, we need to distinguish between a discard and play
   $('.card').click(function() {
     var card_num = $(this).attr('value');
-    $.post(game_id + "/turn",{"card":card_num,"action":"play"});
+    $.post(turn_path,{"card":card_num,"action":"play"});
   });
 
   // refresh every second
@@ -12,7 +14,7 @@ $(document).ready(function() {
   {
     $.ajax({
       type:"get",
-      url:game_id + "/reload",
+      url: reload_path,
       datatype:"html",
       success:function(data)
       {
@@ -44,7 +46,7 @@ $(document).ready(function() {
           $('#hand-card-5 .card-cost-band p').text(parsed['cards'][4]['card_type']);
       }
     });
-}, 2000);//time in milliseconds
+}, 5000);//time in milliseconds
 
 });
 
