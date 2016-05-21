@@ -54,29 +54,29 @@
   </div>
   <div id="bottom-frame">
     <div id="hand">
-      <div id="hand-card-1" class="card held-card basic-card-div subtle-shadow" value="1">
+      <div id="hand-card-1" class="card held-card veilable basic-card-div subtle-shadow" value="1">
         <div class="card-title basic-card-div"><%= @cards[0][:name] %>
         </div>
-        <div class="card-attribute-indicator card-mana-indicator">
+        <div class="card-attribute-indicator card-mana-indicator veilable">
           <%= @cards[0][:mana_cost] %>
         </div>
-        <div class="card-attribute-indicator card-stamina-indicator">
+        <div class="card-attribute-indicator card-stamina-indicator veilable">
           <%= @cards[0][:stamina_cost] %>
         </div>
-        <div class="card-attribute-indicator card-gold-indicator">
+        <div class="card-attribute-indicator card-gold-indicator veilable">
           <%= @cards[0][:gold_cost] %>
         </div>
-        <div class="card-image basic-card-div">
-          <img class="card-image-image" src="/images/black_mage.jpg"/>
+        <div class="card-image basic-card-div veilable">
+          <img class="card-image-image veilable" src="/images/black_mage.jpg"/>
         </div>
-        <div class="card-cost-band basic-card-div">
+        <div class="card-cost-band basic-card-div veilable">
           <p class="card-description-text"><%= @cards[0][:card_type] %></p>
         </div>
-        <div class="card-description basic-card-div">
+        <div class="card-description basic-card-div veilable">
           <p class="card-description-text"><%= @cards[0][:description] %>
           </p>
         </div>
-        <div class="card-bottom-band basic-card-div">
+        <div class="card-bottom-band basic-card-div veilable">
 
           <div class="discard-button" value="1"></div>
 

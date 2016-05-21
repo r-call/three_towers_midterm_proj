@@ -29,6 +29,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.veil {
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+.veilable {
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+}
 .card {
   text-align:left;
   background-color: #5EB4C7;

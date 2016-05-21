@@ -23,6 +23,18 @@ $(document).ready(function() {
     }
   }
 
+
+  // refresh attribute visibility
+  function refreshAttributeDisplay() {
+    $('.card-attribute-indicator').each(function(){
+      if ($(this).text() != 0) {
+        $(this).addClass('inline-block');
+      } else if ($(this).text() == 0) {
+        $(this).removeClass('inline-block');
+      }
+    });
+  }
+
   //
   // ajax functions
 
@@ -61,18 +73,35 @@ $(document).ready(function() {
           $('#hand-card-1 .card-title').text(parsed['cards'][0]['name']);
           $('#hand-card-1 .card-description p').text(parsed['cards'][0]['description']);
           $('#hand-card-1 .card-cost-band p').text(parsed['cards'][0]['card_type']);
+          $('#hand-card-1 .card-mana-indicator').text(parsed['cards'][0]['mana_cost']);
+          $('#hand-card-1 .card-stamina-indicator').text(parsed['cards'][0]['stamina_cost']);
+          $('#hand-card-1 .card-gold-indicator').text(parsed['cards'][0]['gold_cost']);
           $('#hand-card-2 .card-title').text(parsed['cards'][1]['name']);
           $('#hand-card-2 .card-description p').text(parsed['cards'][1]['description']);
           $('#hand-card-2 .card-cost-band p').text(parsed['cards'][1]['card_type']);
+          $('#hand-card-2 .card-mana-indicator').text(parsed['cards'][1]['mana_cost']);
+          $('#hand-card-2 .card-stamina-indicator').text(parsed['cards'][1]['stamina_cost']);
+          $('#hand-card-2 .card-gold-indicator').text(parsed['cards'][1]['gold_cost']);
           $('#hand-card-3 .card-title').text(parsed['cards'][2]['name']);
           $('#hand-card-3 .card-description p').text(parsed['cards'][2]['description']);
           $('#hand-card-3 .card-cost-band p').text(parsed['cards'][2]['card_type']);
+          $('#hand-card-3 .card-mana-indicator').text(parsed['cards'][2]['mana_cost']);
+          $('#hand-card-3 .card-stamina-indicator').text(parsed['cards'][2]['stamina_cost']);
+          $('#hand-card-3 .card-gold-indicator').text(parsed['cards'][2]['gold_cost']);
           $('#hand-card-4 .card-title').text(parsed['cards'][3]['name']);
           $('#hand-card-4 .card-description p').text(parsed['cards'][3]['description']);
           $('#hand-card-4 .card-cost-band p').text(parsed['cards'][3]['card_type']);
+          $('#hand-card-4 .card-mana-indicator').text(parsed['cards'][3]['mana_cost']);
+          $('#hand-card-4 .card-stamina-indicator').text(parsed['cards'][3]['stamina_cost']);
+          $('#hand-card-4 .card-gold-indicator').text(parsed['cards'][3]['gold_cost']);
           $('#hand-card-5 .card-title').text(parsed['cards'][4]['name']);
           $('#hand-card-5 .card-description p').text(parsed['cards'][4]['description']);
           $('#hand-card-5 .card-cost-band p').text(parsed['cards'][4]['card_type']);
+          $('#hand-card-5 .card-mana-indicator').text(parsed['cards'][4]['mana_cost']);
+          $('#hand-card-5 .card-stamina-indicator').text(parsed['cards'][4]['stamina_cost']);
+          $('#hand-card-5 .card-gold-indicator').text(parsed['cards'][4]['gold_cost']);
+          // refresh attribute costs for cards
+          refreshAttributeDisplay();
           // hacky way of checking if there's an opponent
           if (typeof parsed['opponent_castle'] == 'number') {
             hasOpponent = true;
@@ -89,10 +118,12 @@ $(document).ready(function() {
     });
   }
 
+
   // refresh data every few seconds
   setInterval(function()
   {
     refreshData();
+    refreshAttributeDisplay();
     checkGameStatus();
   }, 5000); // milliseconds
 
