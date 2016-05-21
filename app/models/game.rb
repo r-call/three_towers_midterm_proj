@@ -14,7 +14,11 @@ class Game < ActiveRecord::Base
   def game_action(move, player_id, card_num)
     #card_num = 1..5
     player = Player.find(player_id)
-    card = Card.find(card_num)
+
+    c = player.show_cards(id)
+    c_id = c[card_num - 1]["id"]
+
+    card = Card.find(c_id)
 
     case move
     when "play"
@@ -29,6 +33,9 @@ class Game < ActiveRecord::Base
     when "pass"
       #do nothing
     end
+
+    return win_condition(player, player.find_opp(id))
+
   end
 
   def turn_tracker
@@ -45,7 +52,7 @@ class Game < ActiveRecord::Base
   end
 
   def first_player_setter
-    if last_turn_player_id = nil
+    if last_turn_player_id == nil
       last_turn_player_id = randomize_first_turn_player
     end
   end

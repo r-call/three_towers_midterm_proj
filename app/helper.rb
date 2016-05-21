@@ -7,8 +7,14 @@ module Helpers
     player.stamina >= card.card.stamina_cost
   end
 
-  def win_condition?(opponent)
-    opponent.castle == 0
+  def win_condition(pl,opp)
+    if pl.castle <= 0
+      return opp.id
+    elsif opp.castle <= 0
+      return pl.id
+    else
+      return nil
+    end      
   end
   
 end
