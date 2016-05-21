@@ -89,6 +89,7 @@ class Player < ActiveRecord::Base
     opponent.stamina += card.opp_stamina.to_i
     opponent.mana += card.opp_mana.to_i
     opponent.gold += card.opp_gold.to_i
+
     self.save
     opponent.save
   end
