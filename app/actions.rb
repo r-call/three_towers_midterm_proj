@@ -3,7 +3,7 @@ require_relative './actions/api'
 #'/game' is the entry point. A new player is created when you visit. Your player ID is stored as a session cookie.
 get '/games/new' do
 
-  erb :'game/new'
+  erb :'game/new', layout: :new_layout
 end
 
 post '/games' do
@@ -28,6 +28,7 @@ post '/games' do
   else
     @game = first_available_game
     @game.update(player_2_id: @player.id)
+    @game.first_player_setter
     @player.generate_hand(@game.id)
   end
 

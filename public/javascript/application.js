@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // does not have opponent until the first ajax get
   var hasOpponent = false;
+  var myTurn = false;
 
   // for ajax calls
   var game_id = $("#data").attr('game-id');
@@ -8,10 +9,15 @@ $(document).ready(function() {
   var reload_path = game_id.concat("/reload");
 
 
-
   function checkGameStatus() {
     if (hasOpponent) {
-      $('#player-alert-box').text('GAME ON!');
+
+      if (myTurn) {
+        $('#player-alert-box').text("Your turn");
+      } else {
+        $('#player-alert-box').text("Opponent's turn");
+      }
+
     } else {
       $('#player-alert-box').text('Waiting for partner...');
     }
@@ -26,7 +32,7 @@ $(document).ready(function() {
   // click card to post data
   // ultimately, we need to distinguish between a discard and play
   function canPlay() {
-    if (hasOpponent) {
+    if (hasOpponent && myTurn) {
       return true;
     } else {
       return false;
@@ -72,6 +78,11 @@ $(document).ready(function() {
             hasOpponent = true;
           } else {
             hasOpponent = false;
+          }
+          if (parsed['current_player_id'] == parsed['player_id']) {
+            myTurn = true;
+          } else {
+            myTurn = false;
           }
 
         }

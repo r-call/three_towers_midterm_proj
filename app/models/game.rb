@@ -2,21 +2,21 @@
 module Helpers
 
   def resources_available?(player, card)
-    player.mana >= card.card.mana_cost && 
-    player.gold >= card.card.gold_cost && 
+    player.mana >= card.card.mana_cost &&
+    player.gold >= card.card.gold_cost &&
     player.stamina >= card.card.stamina_cost
   end
 
   def win_condition(pl,opp)
-    if pl.shield <= 0
+    if pl.castle <= 0
       return opp.id
-    elsif opp.shield <= 0
+    elsif opp.castle <= 0
       return pl.id
     else
       return nil
-    end      
+    end
   end
-  
+
 end
 
 class Game < ActiveRecord::Base
@@ -24,6 +24,7 @@ class Game < ActiveRecord::Base
   belongs_to :player_2, class_name: "Player"
   has_many :held_cards
   include Helpers
+
   def player_1
     Player.find_by_id(player_1_id)
   end
@@ -34,6 +35,7 @@ class Game < ActiveRecord::Base
 
   def game_action(move, player_id, card_num)
 
+    turn_tracker
     #card_num = 1..5
     player = Player.find(player_id)
     hand = player.hand(id)
@@ -66,17 +68,18 @@ class Game < ActiveRecord::Base
     b = player_2
 
     if last_turn_player_id == a.id
-      last_turn_player_id = b.id
-      game.update
+      self.last_turn_player_id = b.id
+      save
     else
-      last_turn_player_id = a.id
-      game.update
+      self.last_turn_player_id = a.id
+      save
     end
   end
 
   def first_player_setter
-    if last_turn_player_id = nil
-      last_turn_player_id = randomize_first_turn_player
+    if last_turn_player_id == nil
+      self.last_turn_player_id = randomize_first_turn_player
+      save
     end
   end
 
@@ -142,4 +145,3 @@ class Game < ActiveRecord::Base
    last_turn_player_id == player_1_id ? player_2_id : player_1_id
   end
 end
-
