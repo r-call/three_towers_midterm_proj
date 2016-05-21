@@ -20,11 +20,11 @@ get '/games/:id/reload' do
     player_mana: @player.mana,
     player_stamina: @player.stamina,
     player_gold: @player.gold,
-    opponent_castle: @opponent ? @opponent.castle : nil,
-    opponent_shield: @opponent ? @opponent.shield : nil,
-    opponent_mana: @opponent ? @opponent.mana : nil,
-    opponent_stamina:  @opponent ? @opponent.stamina : nil,
-    opponent_gold:  @opponent ? @opponent.gold : nil
+    opponent_castle: @opponent ? @opponent.castle : '',
+    opponent_shield: @opponent ? @opponent.shield : '',
+    opponent_mana: @opponent ? @opponent.mana : '',
+    opponent_stamina:  @opponent ? @opponent.stamina : '',
+    opponent_gold:  @opponent ? @opponent.gold : ''
   }
 
   body @total_data.to_json
