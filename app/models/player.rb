@@ -82,8 +82,13 @@ class Player < ActiveRecord::Base
     self.stamina += card.stamina_cost.to_i
     self.mana += card.mana_cost.to_i
     self.gold += card.gold_cost.to_i
-    opponent.castle += card.opp_castle.to_i
     opponent.shield += card.opp_shield.to_i
+    if opponent.shield <= 0
+      bleed_damage = opponent.shield
+      opponent.castle += bleed_damage
+    else
+      opponent.castle += card.opp_castle.to_i
+    end
     opponent.stamina_regen_rate += card.opp_stamina_rate.to_i
     opponent.mana_regen_rate += card.opp_mana_rate.to_i
     opponent.gold_regen_rate += card.opp_gold_rate.to_i
