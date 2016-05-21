@@ -46,7 +46,7 @@ $(document).ready(function() {
           $('#hand-card-5 .card-cost-band p').text(parsed['cards'][4]['card_type']);
       }
     });
-}, 5000);//time in milliseconds
+}, 2000);//time in milliseconds
 
 });
 

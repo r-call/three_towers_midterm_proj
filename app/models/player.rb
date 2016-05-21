@@ -14,9 +14,11 @@ class Player < ActiveRecord::Base
   end
 
   def destroy_card(card_num, game_id)
-    hand_cards = show_cards(game_id)
-    h_id = hand_cards[card_num - 1]["id"]
-    HeldCard.destroy(h_id)
+    number = hand(game_id)[card_num - 1].id
+    HeldCard.destroy(number)
+    # hand_cards = show_cards(game_id)
+    # h_id = hand_cards[card_num - 1]["id"]
+    # HeldCard.destroy(h_id)
   end
 
   def generate_hand(game_id)
@@ -58,6 +60,10 @@ class Player < ActiveRecord::Base
       :mana_cost => mana_cost,
       :gold_cost => gold_cost,
       :stamina_cost => stamina_cost}
+  end
+
+  def hand(game_id)
+    HeldCard.where(player_id:id,game_id:game_id).order(:id)
   end
 
   def play_card(card, game_id)
