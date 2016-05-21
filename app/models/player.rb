@@ -4,6 +4,8 @@ class Player < ActiveRecord::Base
   has_many :held_cards, through: :cards
   has_many :games
 
+  include Helpers
+
   def find_opp(game_id)
     game = Game.find(game_id)
     if game.player_1.id == self.id
@@ -67,9 +69,8 @@ class Player < ActiveRecord::Base
   end
 
   def play_card(card, game_id)
-    #needs game_id
     opponent = find_opp(game_id)
-
+    
     self.castle += card.own_castle.to_i
     self.shield += card.own_shield.to_i
     self.stamina += card.own_stamina.to_i
@@ -81,8 +82,13 @@ class Player < ActiveRecord::Base
     self.stamina += card.stamina_cost.to_i
     self.mana += card.mana_cost.to_i
     self.gold += card.gold_cost.to_i
-    opponent.castle += card.opp_castle.to_i
     opponent.shield += card.opp_shield.to_i
+    if opponent.shield <= 0
+      bleed_damage = opponent.shield
+      opponent.castle += bleed_damage
+    else
+      opponent.castle += card.opp_castle.to_i
+    end
     opponent.stamina_regen_rate += card.opp_stamina_rate.to_i
     opponent.mana_regen_rate += card.opp_mana_rate.to_i
     opponent.gold_regen_rate += card.opp_gold_rate.to_i
@@ -92,6 +98,14 @@ class Player < ActiveRecord::Base
 
     self.save
     opponent.save
+    
+  end
+
+  def regen_resources
+    self.stamina += stamina_regen_rate
+    self.mana += mana_regen_rate
+    self.gold += gold_regen_rate
+    save
   end
 
 end
