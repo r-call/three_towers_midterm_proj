@@ -1,28 +1,8 @@
-
-module Helpers
-
-  def resources_available?(player, card)
-    player.mana >= card.card.mana_cost &&
-    player.gold >= card.card.gold_cost &&
-    player.stamina >= card.card.stamina_cost
-  end
-
-  def win_condition(pl,opp)
-    if pl.castle <= 0
-      return opp.id
-    elsif opp.castle <= 0
-      return pl.id
-    else
-      return nil
-    end
-  end
-
-end
-
 class Game < ActiveRecord::Base
   belongs_to :player_1, class_name: "Player"
   belongs_to :player_2, class_name: "Player"
   has_many :held_cards
+
   include Helpers
 
   def player_1
@@ -40,20 +20,21 @@ class Game < ActiveRecord::Base
     player = Player.find(player_id)
     hand = player.hand(id)
     card = hand[card_num - 1].card
+    opp = player.find_opp(id)
 
     case move
     when "play"
-      #perform card action, discard card, create new card
       player.play_card(card, id)
       hp_setter(player_1, player_2)
       player.destroy_card(card_num, id)
       player.generate_card(id)
+      opp.regen_resources
     when "discard"
-      #discard card, create new card
       player.destroy_card(card_num, id)
       player.generate_card(id)
+      opp.regen_resources
     when "pass"
-      #do nothing
+      opp.regen_resources
     end
 
     if win_condition(player_1, player_2)
