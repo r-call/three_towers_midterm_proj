@@ -15,20 +15,25 @@ class Game < ActiveRecord::Base
 
   def game_action(move, player_id, card_num)
 
-    turn_tracker
     #card_num = 1..5
     player = Player.find(player_id)
     hand = player.hand(id)
     card = hand[card_num - 1].card
     opp = player.find_opp(id)
 
+    if resources_available?(player,card)
+      turn_tracker
+    end
+
     case move
     when "play"
-      player.play_card(card, id)
-      hp_setter(player_1, player_2)
-      player.destroy_card(card_num, id)
-      player.generate_card(id)
-      opp.regen_resources
+      if resources_available?(player,card)
+        player.play_card(card, id)
+        hp_setter(player_1, player_2)
+        player.destroy_card(card_num, id)
+        player.generate_card(id)
+        opp.regen_resources
+      end
     when "discard"
       player.destroy_card(card_num, id)
       player.generate_card(id)
@@ -88,18 +93,14 @@ class Game < ActiveRecord::Base
   end
 
   def hp_setter(player_1, player_2)
-    if player_1.castle < 0
-      player_1.castle = 0
-    end
-    if player_1.shield < 0
-      player_1.shield = 0
-    end
-    if player_2.castle < 0
-      player_2.castle = 0
-    end
-    if player_2.shield < 0
-      player_2.shield = 0
-    end
+    player_1.castle = 0 if player_1.castle < 0
+    player_1.castle = 100 if player_1.castle >100
+    player_1.shield = 0 if player_1.shield < 0
+    player_1.shield = 50 if player_1.shield > 50
+    player_2.castle = 0 if player_2.castle < 0
+    player_2.castle = 100 if player_2.castle > 100
+    player_2.shield = 0 if player_2.shield < 0
+    player_2.shield = 50 if player_2.shield >50
     if player_1.mana < 0
       player_1.mana = 0
     end
