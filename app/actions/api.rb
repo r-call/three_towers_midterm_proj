@@ -6,13 +6,26 @@ post '/games/:id/turn' do
   # puts params[:card]
   # puts params[:action]
 
-  # redirect '/games/:id/reload'
+  # redirect "/games/#{params[:id]}/"
 end
 
 get '/games/:id/reload' do
-  @player = Player.find(session[:player_id]).to_json
-  @cards = @player.show_cards(params[:id]).to_json
-  @opponent = @player.find_opp(params[:id]).to_json
-  body @player + @cards + @opponent
+  @player = Player.find(session[:player_id])
+  @cards = @player.show_cards(params[:id])
+  @opponent = @player.find_opp(params[:id])
+  @total_data = {
+    cards: @cards,
+    player_castle: @player.castle,
+    player_shield: @player.shield,
+    player_mana: @player.mana,
+    player_stamina: @player.stamina,
+    player_gold: @player.gold,
+    opponent_castle: @opponent.castle,
+    opponent_shield: @opponent.shield,
+    opponent_mana: @opponent.mana,
+    opponent_stamina: @opponent.stamina,
+    opponent_gold: @opponent.gold
+  }
 
+  body @total_data.to_json
 end
