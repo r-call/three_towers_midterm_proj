@@ -1,4 +1,5 @@
 require_relative './actions/api'
+require_relative './actions/rocketio'
 
 #'/game' is the entry point. A new player is created when you visit. Your player ID is stored as a session cookie.
 get '/games/new' do
