@@ -98,17 +98,41 @@ $(document).ready(function() {
 
 
   // click a card
-  $('.card').click(function() {
-
+  $('.held-card').click(function() {
     var card_num = $(this).attr('value');
-    var action = "play";
-    // add discard and pass later
-
     if ( canPlay() ) {
-      postPlay(card_num, action);
+      postPlay(card_num, "play");
     } else {
       // temp for testing. should do nothing for else ultimately
-      console.log("Can't play without a partner!");
+      console.log("Can't play - no opponent or not your turn");
+    }
+  });
+
+  // click discard button
+  $('.discard-button').click(function(event) {
+    event.stopPropagation();
+    var card_num = $(this).attr('value');
+    if ( hasOpponent && myTurn ) {
+      postPlay(card_num, "discard");
+    } else {
+      console.log("Can't discard - no opponent or not your turn")
+    }
+  });
+
+  // click pass button
+  $('#pass-button').click(function() {
+    if ( hasOpponent && myTurn ) {
+      postPlay(null,"pass");
+    } else {
+      console.log("Can't pass - no opponent or not your turn");
+    }
+  });
+
+  // display attribute costs for cards
+
+  $('.card-attribute-indicator').each(function(){
+    if ($(this).text() != 0) {
+      $(this).toggleClass('inline-block');
     }
   });
 

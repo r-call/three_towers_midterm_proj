@@ -42,11 +42,13 @@
 }
 
 .card-title {
-  width:90%;
+  width:auto;
   height:7%;
   margin: 0% auto;
+  padding-left:10px;
   font-family: Futura;
   font-size:16px;
+  display: inline-block;
 }
 .card-image {
   background-color:white;
@@ -84,6 +86,40 @@
   padding:4px;
   margin:0;
 }
+
+.discard-button {
+  height:20px;
+  width:20px;
+  display:inline-block;
+  float:right;
+  margin-right:8px;
+  margin-top:3px;
+  border-radius:100%;
+  background-color:#F36731;
+}
+.card-attribute-indicator {
+  height:15px;
+  width:15px;
+  display:none;
+  float:right;
+  margin-right:8px;
+  margin-bottom:5px;
+  border-radius:100%;
+}
+.card-mana-indicator{
+  background-color:blue;
+}
+
+.card-stamina-indicator{
+  background-color:red;
+}
+
+.card-gold-indicator{
+  background-color:yellow;
+}
+.inline-block {
+  display: inline-block;
+}
 /*
 .card-bottom-band {
   background-color: #F7F7F7;
@@ -110,10 +146,23 @@
 #hand-card-5 {
   transform: translateY(35px) rotate(10deg);
 }
+
+#pass-button {
+  background-color:red;
+  width: 60px;
+  height: 40px;
+}
 #player-card-container {
   display: inline-block;
 }
 
+#player-alert-box {
+  text-align:center;
+  color:red;
+  margin: auto;
+  font-family: Futura;
+  font-size:30px;
+}
 #played-card {
   font-family: Futura;
   font-size: 40px;

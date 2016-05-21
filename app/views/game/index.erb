@@ -1,4 +1,6 @@
 <div id="data" game-id="<%= @game_id %>"></div>
+<div id="player-alert-box">Waiting for partner...
+</div>
 <div class="frame">
   <div id="indicator-box-p1" class="indicator-box">
     castle
@@ -50,12 +52,19 @@
     <div id="played-card" class="card">PLAYED
     </div>
   </div>
-  <div id="player-alert-box">Waiting for partner...
-  </div>
   <div id="bottom-frame">
     <div id="hand">
-      <div id="hand-card-1" class="card basic-card-div subtle-shadow" value="1">
+      <div id="hand-card-1" class="card held-card basic-card-div subtle-shadow" value="1">
         <div class="card-title basic-card-div"><%= @cards[0][:name] %>
+        </div>
+        <div class="card-attribute-indicator card-mana-indicator">
+          <%= @cards[0][:mana_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-stamina-indicator">
+          <%= @cards[0][:stamina_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-gold-indicator">
+          <%= @cards[0][:gold_cost] %>
         </div>
         <div class="card-image basic-card-div">
           <img class="card-image-image" src="/images/black_mage.jpg"/>
@@ -69,11 +78,22 @@
         </div>
         <div class="card-bottom-band basic-card-div">
 
+          <div class="discard-button" value="1"></div>
+
         </div>
       </div>
 
-      <div id="hand-card-2" class="card basic-card-div subtle-shadow" value="2">
+      <div id="hand-card-2" class="card held-card basic-card-div subtle-shadow" value="2">
         <div class="card-title basic-card-div"><%= @cards[1][:name] %>
+        </div>
+        <div class="card-attribute-indicator card-mana-indicator">
+          <%= @cards[1][:mana_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-stamina-indicator">
+          <%= @cards[1][:stamina_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-gold-indicator">
+          <%= @cards[1][:gold_cost] %>
         </div>
         <div class="card-image basic-card-div">
           <img class="card-image-image" src="/images/black_mage.jpg"/>
@@ -86,12 +106,24 @@
           </p>
         </div>
         <div class="card-bottom-band basic-card-div">
+          <div class="discard-button" value="2"></div>
+
 
         </div>
       </div>
 
-      <div id="hand-card-3" class="card basic-card-div subtle-shadow" value="3">
+      <div id="hand-card-3" class="card held-card basic-card-div subtle-shadow" value="3">
         <div class="card-title basic-card-div"><%= @cards[2][:name] %>
+        </div>
+
+        <div class="card-attribute-indicator card-mana-indicator">
+          <%= @cards[2][:mana_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-stamina-indicator">
+          <%= @cards[2][:stamina_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-gold-indicator">
+          <%= @cards[2][:gold_cost] %>
         </div>
         <div class="card-image basic-card-div">
           <img class="card-image-image" src="/images/black_mage.jpg"/>
@@ -104,12 +136,23 @@
           </p>
         </div>
         <div class="card-bottom-band basic-card-div">
+          <div class="discard-button" value="3"></div>
 
         </div>
       </div>
 
-      <div id="hand-card-4" class="card basic-card-div subtle-shadow" value="4">
+      <div id="hand-card-4" class="card held-card basic-card-div subtle-shadow" value="4">
         <div class="card-title basic-card-div"><%= @cards[3][:name] %>
+        </div>
+
+        <div class="card-attribute-indicator card-mana-indicator">
+          <%= @cards[3][:mana_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-stamina-indicator">
+          <%= @cards[3][:stamina_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-gold-indicator">
+          <%= @cards[3][:gold_cost] %>
         </div>
         <div class="card-image basic-card-div">
           <img class="card-image-image" src="/images/black_mage.jpg"/>
@@ -123,11 +166,22 @@
         </div>
         <div class="card-bottom-band basic-card-div">
 
+          <div class="discard-button" value="4"></div>
         </div>
       </div>
 
-      <div id="hand-card-5" class="card basic-card-div subtle-shadow" value="5">
+      <div id="hand-card-5" class="card held-card basic-card-div subtle-shadow" value="5">
         <div class="card-title basic-card-div"><%= @cards[4][:name] %>
+        </div>
+
+        <div class="card-attribute-indicator card-mana-indicator">
+          <%= @cards[4][:mana_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-stamina-indicator">
+          <%= @cards[4][:stamina_cost] %>
+        </div>
+        <div class="card-attribute-indicator card-gold-indicator">
+          <%= @cards[4][:gold_cost] %>
         </div>
         <div class="card-image basic-card-div">
           <img class="card-image-image" src="/images/black_mage.jpg"/>
@@ -140,10 +194,14 @@
           </p>
         </div>
         <div class="card-bottom-band basic-card-div">
+          <div class="discard-button" value="5"></div>
 
         </div>
       </div>
 
+    </div>
+    <div id="pass-button">
+      PASS
     </div>
   </div>
 </div>
