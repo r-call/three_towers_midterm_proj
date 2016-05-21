@@ -43,9 +43,15 @@ class Game < ActiveRecord::Base
     end
 
     if win_condition(player_1, player_2)
+      if player_2.castle <= 0
+        self.winner_id = player_1.id
+        save
+      elsif player_1.castle <= 0
+        self.winner_id = player_2.id
+        save
+      end
       held_hand_destroy(player_1, player_2)
       delete_players
-      end_game
     end
   end
 
