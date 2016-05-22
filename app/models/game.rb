@@ -18,12 +18,12 @@ class Game < ActiveRecord::Base
     #card_num = 1..5
     player = Player.find(player_id)
     hand = player.hand(id)
-    card = hand[card_num - 1].card
+    card = nil
+    if card_num
+      card = hand[card_num - 1].card
+    end
     opp = player.find_opp(id)
 
-    if resources_available?(player,card)
-      turn_tracker
-    end
 
     case move
     when "play"
@@ -32,26 +32,29 @@ class Game < ActiveRecord::Base
         hp_setter(player_1, player_2)
         player.destroy_card(card_num, id)
         player.generate_card(id)
+        turn_tracker
         opp.regen_resources
       end
     when "discard"
       player.destroy_card(card_num, id)
       player.generate_card(id)
+      turn_tracker
       opp.regen_resources
     when "pass"
+      turn_tracker
       opp.regen_resources
     end
 
     if win_condition(player_1, player_2)
       if player_2.castle <= 0
         self.winner_id = player_1.id
+        self.loser_id = player_2.id
         save
       elsif player_1.castle <= 0
         self.winner_id = player_2.id
+        self.loser_id = player_1.id
         save
       end
-      held_hand_destroy(player_1, player_2)
-      delete_players
     end
   end
 

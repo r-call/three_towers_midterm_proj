@@ -31,5 +31,24 @@ get '/games/:id/reload' do
     current_player_id: @game.current_player_id
   }
 
+
   body @total_data.to_json
+
+  # if @game.winner_id == @player.id
+  #   redirect "/game/winner"
+  # end
+  # if @game.loser_id == @player.id
+  #   redirect "/game/loser"
+  # end
+
 end
+
+# get 'game/winner' do
+#   erb :'/game/winner'
+# end
+
+# get 'game/loser' do
+#   erb :'/game/loser'
+# end
+
+
