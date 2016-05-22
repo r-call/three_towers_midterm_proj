@@ -36,43 +36,43 @@ $(document).ready(function() {
     });
   }
 
-  // function enoughAttributes(card_num) {
-  //   if (
-  //
-  //     $('.held-card .card-title .card-mana-indicator')[card_num - 1].text() >= $('#mana-indicator-p1').text() &&
-  //     $('.held-card .card-title .card-stamina-indicator')[card_num - 1].text() >= $('#stamina-indicator-p1').text() &&
-  //     $('.held-card .card-title .card-gold-indicator')[card_num - 1].text() >= $('#gold-indicator-p1').text()
-  //   ) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
-  // function veilCards() {
-  //   for (i = 1; i <= 5; i++) {
-  //     if ( enoughAttributes(i) ) {
-  //       $('.heldcard')[i - 1].find('.veilable').removeClass('veil');
-  //     } else {
-  //       $('.heldcard')[i - 1].find('.veilable').addClass('veil');
-  //     }
-  //   }
-  // }
-  //
-  // ajax functions
-
-  function postPlay (card_num,action) {
-    $.post(turn_path,{"card":card_num,"action":action});
+  function enoughAttributes(card_num) {
+    if (
+      $('.held-card .card-title .card-mana-indicator')[card_num - 1].text() >= $('#mana-indicator-p1').text() &&
+      $('.held-card .card-title .card-stamina-indicator')[card_num - 1].text() >= $('#stamina-indicator-p1').text() &&
+      $('.held-card .card-title .card-gold-indicator')[card_num - 1].text() >= $('#gold-indicator-p1').text()
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   }
-  // click card to post data
-  // ultimately, we need to distinguish between a discard and play
+
+  function veilCards() {
+    for (i = 1; i <= 5; i++) {
+      if ( enoughAttributes(i) ) {
+        $('.heldcard')[i - 1].find('.veilable').removeClass('veil');
+      } else {
+        $('.heldcard')[i - 1].find('.veilable').addClass('veil');
+      }
+    }
+  }
+
+  // can a card be played?
   function canPlay(card_num) {
-    // if (hasOpponent && myTurn && enoughAttributes(card_num)) {
+    if ( hasOpponent && myTurn && enoughAttributes(card_num) ) {
     if (hasOpponent && myTurn ) {
       return true;
     } else {
       return false;
     }
+  }
+  
+  //
+  // ajax functions
+
+  function postPlay (card_num,action) {
+    $.post(turn_path,{"card":card_num,"action":action});
   }
 
   function refreshData(){
@@ -155,7 +155,7 @@ $(document).ready(function() {
   {
     refreshData();
     refreshAttributeDisplay();
-    // veilCards();
+    veilCards();
     checkGameStatus();
   }, 5000); // milliseconds
 
