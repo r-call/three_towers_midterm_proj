@@ -75,7 +75,7 @@
   margin: 0 auto;
 }
 
-.card-cost-band {
+.card-type-band {
   background-color: #F7F7F7;
   width: 90%;
   height: 7%;
@@ -88,8 +88,17 @@
   margin: 4% auto;
   vertical-align: bottom;
   position: relative;
+  overflow: auto;
 }
 .card-description-text {
+  font-family: Lato;
+  font-size: 11px;
+  color:#505050;
+  padding:4px;
+  margin:0;
+}
+
+.card-type-text {
   font-family: Lato;
   font-size: 11px;
   color:#505050;
@@ -138,23 +147,44 @@
   margin: 4% auto;
 }*/
 
+.attack {
+  background-color:grey;
+}
+
+.item {
+  background-color:green;
+}
+
+.magic {
+  background-color:pink;
+}
 #hand-card-1 {
   transform: translateY(35px) rotate(-10deg);
+  position:relative;
+  z-index:1;
 }
 
 #hand-card-2 {
   transform: translateY(10px) rotate(-5deg);
+  position:relative;
+  z-index:2;
 }
 
 #hand-card-3 {
+  position:relative;
+  z-index:3;
 }
 
 #hand-card-4 {
   transform: translateY(10px)  rotate(5deg);
+  position:relative;
+  z-index:4;
 }
 
 #hand-card-5 {
   transform: translateY(35px) rotate(10deg);
+  position:relative;
+  z-index:5;
 }
 
 #pass-button {
@@ -244,4 +274,16 @@
   width: 50px;
   font-size: 30px;
 
+}
+
+.castle-indicator.max-attribute {
+  font-weight:bolder;
+  font-size: 70px;
+  color:green;
+}
+
+.shield-indicator.max-attribute {
+  font-weight:bolder;
+  font-size: 50px;
+  color:green;
 }

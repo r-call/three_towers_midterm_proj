@@ -16,6 +16,25 @@ $(document).ready(function() {
     io.push("reload_request", {"game":game_id, "player":player_id});
   });
 
+  // add class/remove class if max attribute
+  $('.castle-indicator').each(function() {
+    console.log($(this).text());
+    if ( $(this).text().trim() == "100" ) {
+      $(this).addClass('max-attribute');
+    } else {
+      $(this).removeClass('max-attribute');
+    }
+  });
+
+  $('.shield-indicator').each(function() {
+    console.log($(this).text());
+    if ( $(this).text().trim() == "25" ) {
+      $(this).addClass('max-attribute');
+    } else {
+      $(this).removeClass('max-attribute');
+    }
+  });
+
   function checkGameStatus() {
     if (hasOpponent) {
 
@@ -30,6 +49,17 @@ $(document).ready(function() {
     }
   }
 
+  function colourCards() {
+    for (i = 1; i <= 5; i++) {
+      if ( $('.held-card').eq(i - 1).find('.card-type-band p').text() == "Attack" ) {
+        $('.held-card').eq(i - 1).addClass('attack');
+      } else if ( $('.held-card').eq(i - 1).find('.card-type-band p').text() == "Magic" ) {
+          $('.held-card').eq(i - 1).addClass('magic');
+      } else if ( $('.held-card').eq(i - 1).find('.card-type-band p').text() == "Item" ) {
+          $('.held-card').eq(i - 1).addClass('item');
+      }
+    }
+  }
 
   // refresh attribute visibility
   function refreshAttributeDisplay() {
@@ -101,35 +131,36 @@ $(document).ready(function() {
       $('#gold-indicator-p2').text(parsed['opponent_gold']);
       $('#hand-card-1 .card-title').text(parsed['cards'][0]['name']);
       $('#hand-card-1 .card-description p').text(parsed['cards'][0]['description']);
-      $('#hand-card-1 .card-cost-band p').text(parsed['cards'][0]['card_type']);
+      $('#hand-card-1 .card-type-band p').text(parsed['cards'][0]['card_type']);
       $('#hand-card-1 .card-mana-indicator').text(parsed['cards'][0]['mana_cost']);
       $('#hand-card-1 .card-stamina-indicator').text(parsed['cards'][0]['stamina_cost']);
       $('#hand-card-1 .card-gold-indicator').text(parsed['cards'][0]['gold_cost']);
       $('#hand-card-2 .card-title').text(parsed['cards'][1]['name']);
       $('#hand-card-2 .card-description p').text(parsed['cards'][1]['description']);
-      $('#hand-card-2 .card-cost-band p').text(parsed['cards'][1]['card_type']);
+      $('#hand-card-2 .card-type-band p').text(parsed['cards'][1]['card_type']);
       $('#hand-card-2 .card-mana-indicator').text(parsed['cards'][1]['mana_cost']);
       $('#hand-card-2 .card-stamina-indicator').text(parsed['cards'][1]['stamina_cost']);
       $('#hand-card-2 .card-gold-indicator').text(parsed['cards'][1]['gold_cost']);
       $('#hand-card-3 .card-title').text(parsed['cards'][2]['name']);
       $('#hand-card-3 .card-description p').text(parsed['cards'][2]['description']);
-      $('#hand-card-3 .card-cost-band p').text(parsed['cards'][2]['card_type']);
+      $('#hand-card-3 .card-type-band p').text(parsed['cards'][2]['card_type']);
       $('#hand-card-3 .card-mana-indicator').text(parsed['cards'][2]['mana_cost']);
       $('#hand-card-3 .card-stamina-indicator').text(parsed['cards'][2]['stamina_cost']);
       $('#hand-card-3 .card-gold-indicator').text(parsed['cards'][2]['gold_cost']);
       $('#hand-card-4 .card-title').text(parsed['cards'][3]['name']);
       $('#hand-card-4 .card-description p').text(parsed['cards'][3]['description']);
-      $('#hand-card-4 .card-cost-band p').text(parsed['cards'][3]['card_type']);
+      $('#hand-card-4 .card-type-band p').text(parsed['cards'][3]['card_type']);
       $('#hand-card-4 .card-mana-indicator').text(parsed['cards'][3]['mana_cost']);
       $('#hand-card-4 .card-stamina-indicator').text(parsed['cards'][3]['stamina_cost']);
       $('#hand-card-4 .card-gold-indicator').text(parsed['cards'][3]['gold_cost']);
       $('#hand-card-5 .card-title').text(parsed['cards'][4]['name']);
       $('#hand-card-5 .card-description p').text(parsed['cards'][4]['description']);
-      $('#hand-card-5 .card-cost-band p').text(parsed['cards'][4]['card_type']);
+      $('#hand-card-5 .card-type-band p').text(parsed['cards'][4]['card_type']);
       $('#hand-card-5 .card-mana-indicator').text(parsed['cards'][4]['mana_cost']);
       $('#hand-card-5 .card-stamina-indicator').text(parsed['cards'][4]['stamina_cost']);
       $('#hand-card-5 .card-gold-indicator').text(parsed['cards'][4]['gold_cost']);
       refreshAttributeDisplay();
+      colourCards();
       veilCards();
 
       if ( parsed['current_game_winner_id'] && (parsed['current_game_winner_id'] == parsed['player_id']) ) {
