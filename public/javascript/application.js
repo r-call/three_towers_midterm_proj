@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  alert( $('.card-mana-indicator')[0] );
+  // alert( $('.card-mana-indicator')[0] );
   // does not have opponent until the first ajax get
   var hasOpponent = false;
   var myTurn = false;
@@ -36,28 +36,28 @@ $(document).ready(function() {
     });
   }
 
-  function enoughAttributes(card_num) {
-    if (
+  // function enoughAttributes(card_num) {
+  //   if (
+  //
+  //     $('.held-card .card-title .card-mana-indicator')[card_num - 1].text() >= $('#mana-indicator-p1').text() &&
+  //     $('.held-card .card-title .card-stamina-indicator')[card_num - 1].text() >= $('#stamina-indicator-p1').text() &&
+  //     $('.held-card .card-title .card-gold-indicator')[card_num - 1].text() >= $('#gold-indicator-p1').text()
+  //   ) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
-      $('.held-card .card-title .card-mana-indicator')[card_num - 1].text() >= $('#mana-indicator-p1').text() &&
-      $('.held-card .card-title .card-stamina-indicator')[card_num - 1].text() >= $('#stamina-indicator-p1').text() &&
-      $('.held-card .card-title .card-gold-indicator')[card_num - 1].text() >= $('#gold-indicator-p1').text()
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  function veilCards() {
-    for (i = 1; i <= 5; i++) {
-      if ( enoughAttributes(i) ) {
-        $('.heldcard')[i - 1].find('.veilable').removeClass('veil');
-      } else {
-        $('.heldcard')[i - 1].find('.veilable').addClass('veil');
-      }
-    }
-  }
+  // function veilCards() {
+  //   for (i = 1; i <= 5; i++) {
+  //     if ( enoughAttributes(i) ) {
+  //       $('.heldcard')[i - 1].find('.veilable').removeClass('veil');
+  //     } else {
+  //       $('.heldcard')[i - 1].find('.veilable').addClass('veil');
+  //     }
+  //   }
+  // }
   //
   // ajax functions
 
@@ -125,8 +125,13 @@ $(document).ready(function() {
           $('#hand-card-5 .card-gold-indicator').text(parsed['cards'][4]['gold_cost']);
           // refresh attribute costs for cards
           refreshAttributeDisplay();
+          
+          if ( parsed['current_game_winner_id'] && (parsed['current_game_winner_id'] == parsed['player_id']) ) {
+            window.location.href = 'winner';
+          } else if ( parsed['current_game_winner_id'] && (parsed['current_game_winner_id'] != parsed['player_id']) ) {
+            window.location.href = 'loser';
+          }
 
-          // if (parsed['current_game_winner_id'] !=)
           // hacky way of checking if there's an opponent
           if (typeof parsed['opponent_castle'] == 'number') {
             hasOpponent = true;
@@ -149,7 +154,7 @@ $(document).ready(function() {
   {
     refreshData();
     refreshAttributeDisplay();
-    veilCards();
+    // veilCards();
     checkGameStatus();
   }, 5000); // milliseconds
 

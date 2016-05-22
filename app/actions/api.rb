@@ -23,7 +23,7 @@ get '/games/:id/reload' do
     player_mana: @player.mana,
     player_stamina: @player.stamina,
     player_gold: @player.gold,
-    opponent_id: @opponent.id,
+    opponent_id: @opponent ? @opponent.id : '',
     opponent_castle: @opponent ? @opponent.castle : '',
     opponent_shield: @opponent ? @opponent.shield : '',
     opponent_mana: @opponent ? @opponent.mana : '',
@@ -39,12 +39,10 @@ get '/games/:id/reload' do
 
 end
 
-get '/game/winner' do
+get '/games/winner' do
   erb :'/game/winner'
 end
 
-get '/game/loser' do
+get '/games/loser' do
   erb :'/game/loser'
 end
-
-
