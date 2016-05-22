@@ -58,11 +58,9 @@
 }
 .card-image {
   background-color:white;
-  width: 90%;
-  height: 40%;
+  width: 155px;
+  height: 115px;
   margin: 4% auto;
-  background-image: url('/images/black_mage.jpg');
-  background-size: contain;
 }
 
 .card-image-image {

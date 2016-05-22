@@ -61,13 +61,13 @@ $(document).ready(function() {
   // can a card be played?
   function canPlay(card_num) {
     if ( hasOpponent && myTurn && enoughAttributes(card_num) ) {
-    if (hasOpponent && myTurn ) {
       return true;
     } else {
       return false;
     }
   }
-  
+
+
   //
   // ajax functions
 
