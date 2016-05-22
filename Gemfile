@@ -8,6 +8,10 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 
+gem 'sinatra-rocketio'
+gem 'eventmachine'
+gem 'thin'
+
 gem 'puma'
 gem 'tux'
 
