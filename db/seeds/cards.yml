@@ -228,7 +228,7 @@
   attr_swap: null
 
 - name: Muddle
-  description: Swap gold with opponent.
+  description: Increase mana regeneration by 2. Decrease gold regeneration by 1.
   image_url: /images/muddle.jpg
   card_type: Magic
   own_mana: 0
@@ -244,13 +244,13 @@
   mana_cost: -6
   gold_cost: 0
   stamina_cost: 0
-  own_mana_rate: 0
-  own_gold_rate: 0
+  own_mana_rate: 2
+  own_gold_rate: -1
   own_stamina_rate: 0
   opp_mana_rate: 0
   opp_gold_rate: 0
   opp_stamina_rate: 0
-  attr_swap: gold
+  attr_swap: null
 
 - name: Imp
   description: Reduce opponent stamina regeneration rate by 1.
