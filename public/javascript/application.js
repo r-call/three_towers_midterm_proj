@@ -173,10 +173,10 @@ $(document).ready(function() {
 
   // click discard button
   $('.discard-button').click(function(event) {
-    event.stopPropagation();
+    event.stopPropagation(); //prevents parent handlers from being notified of event
     var card_num = $(this).attr('value');
     if ( hasOpponent && myTurn ) {
-      postPlay(card_num, "discard");
+      postPlay(card_num, "discard"); //postPlay defined above
     } else {
       console.log("Can't discard - no opponent or not your turn")
     }
