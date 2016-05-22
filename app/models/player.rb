@@ -73,6 +73,10 @@ class Player < ActiveRecord::Base
     
     self.castle += card.own_castle.to_i
     self.shield += card.own_shield.to_i
+    self.save
+    if self.shield < 0
+      self.castle += self.shield
+    end
     self.stamina += card.own_stamina.to_i
     self.mana += card.own_mana.to_i
     self.gold += card.own_gold.to_i
@@ -83,11 +87,10 @@ class Player < ActiveRecord::Base
     self.mana += card.mana_cost.to_i
     self.gold += card.gold_cost.to_i
     opponent.shield += card.opp_shield.to_i
-    if opponent.shield <= 0
-      bleed_damage = opponent.shield
-      opponent.castle += bleed_damage
-    else
-      opponent.castle += card.opp_castle.to_i
+    opponent.castle += card.opp_castle.to_i
+    opponent.save
+    if opponent.shield < 0
+      opponent.castle += opponent.shield
     end
     opponent.stamina_regen_rate += card.opp_stamina_rate.to_i
     opponent.mana_regen_rate += card.opp_mana_rate.to_i

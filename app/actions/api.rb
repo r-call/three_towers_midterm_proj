@@ -10,6 +10,7 @@ post '/games/:id/turn' do
 end
 
 get '/games/:id/reload' do
+
   @player = Player.find(session[:player_id])
   @cards = @player.show_cards(params[:id])
   @opponent = @player.find_opp(params[:id])
@@ -28,8 +29,22 @@ get '/games/:id/reload' do
     opponent_mana: @opponent ? @opponent.mana : '',
     opponent_stamina:  @opponent ? @opponent.stamina : '',
     opponent_gold:  @opponent ? @opponent.gold : '',
-    current_player_id: @game.current_player_id
+    current_player_id: @game.current_player_id,
+    current_game_winner_id: @game.winner_id,
+    current_game_loser_id: @game.loser_id
   }
 
+
   body @total_data.to_json
+
 end
+
+get '/game/winner' do
+  erb :'/game/winner'
+end
+
+get '/game/loser' do
+  erb :'/game/loser'
+end
+
+
