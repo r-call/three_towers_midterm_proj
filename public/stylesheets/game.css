@@ -19,6 +19,10 @@
   -webkit-user-select:none;
 }
 
+.shield-indicator {
+  background: 
+}
+
 #bottom-frame {
   bottom:50px;
   position: absolute;
@@ -228,20 +232,22 @@
   width: 75px;
   font-size:40px;
 }
+
 .mana-indicator {
   height: 50px;
   width: 50px;
   font-size: 30px;
+  background-color: #ccffff
 }
 .stamina-indicator {
   height: 50px;
   width: 50px;
   font-size: 30px;
-
+  background-color: #ff6666
 }
 .gold-indicator {
   height: 50px;
   width: 50px;
   font-size: 30px;
-
+  background-color: #ffff66
 }
