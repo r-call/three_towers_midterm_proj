@@ -29,6 +29,7 @@ class Game < ActiveRecord::Base
     when "play"
       if resources_available?(player,card)
         player.play_card(card, id)
+        update(last_card_played_id: card.id)
         hp_setter(player_1, player_2)
         player.destroy_card(card_num, id)
         player.generate_card(id)
@@ -75,6 +76,34 @@ class Game < ActiveRecord::Base
     if last_turn_player_id == nil
       self.last_turn_player_id = randomize_first_turn_player
       save
+    end
+  end
+
+  def show_last_card_played
+    if last_card_played_id.nil?
+      nil
+    else
+      card = Card.find(last_card_played_id)
+
+      id = card.id
+      name = card.name
+      desc = card.description
+      url = card.image_url
+      type = card.card_type
+      mana_cost = card.mana_cost * -1
+      gold_cost = card.gold_cost * -1
+      stamina_cost = card.stamina_cost * -1
+
+      hash = {
+        :id => id,
+        :name => name,
+        :description => desc,
+        :image_url => url,
+        :card_type => type,
+        :mana_cost => mana_cost,
+        :gold_cost => gold_cost,
+        :stamina_cost => stamina_cost
+      }
     end
   end
 
