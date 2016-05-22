@@ -117,15 +117,15 @@
   border-radius:100%;
 }
 .card-mana-indicator{
-  background-color:blue;
+  background-color:#ccffff;
 }
 
 .card-stamina-indicator{
-  background-color:red;
+  background-color:#ff6666;
 }
 
 .card-gold-indicator{
-  background-color:yellow;
+  background-color:#ffff66;
 }
 .inline-block {
   display: inline-block;
