@@ -67,7 +67,8 @@ $(document).ready(function() {
   // click card to post data
   // ultimately, we need to distinguish between a discard and play
   function canPlay(card_num) {
-    if (hasOpponent && myTurn && enoughAttributes(card_num)) {
+    // if (hasOpponent && myTurn && enoughAttributes(card_num)) {
+    if (hasOpponent && myTurn ) {
       return true;
     } else {
       return false;
@@ -125,7 +126,7 @@ $(document).ready(function() {
           $('#hand-card-5 .card-gold-indicator').text(parsed['cards'][4]['gold_cost']);
           // refresh attribute costs for cards
           refreshAttributeDisplay();
-          
+
           if ( parsed['current_game_winner_id'] && (parsed['current_game_winner_id'] == parsed['player_id']) ) {
             window.location.href = 'winner';
           } else if ( parsed['current_game_winner_id'] && (parsed['current_game_winner_id'] != parsed['player_id']) ) {
