@@ -24,7 +24,7 @@
 }
 
 #bottom-frame {
-  bottom:50px;
+  bottom:0px;
   position: absolute;
   width: 100%;
 }
