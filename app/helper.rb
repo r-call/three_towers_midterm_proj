@@ -2,9 +2,9 @@
 module Helpers
 
   def resources_available?(player, card)
-    player.mana >= card.card.mana_cost && 
-    player.gold >= card.card.gold_cost && 
-    player.stamina >= card.card.stamina_cost
+    player.mana >= card.mana_cost * -1 && 
+    player.gold >= card.gold_cost * -1 && 
+    player.stamina >= card.stamina_cost * -1
   end
 
   def win_condition(pl,opp)
