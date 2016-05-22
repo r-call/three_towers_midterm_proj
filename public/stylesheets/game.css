@@ -19,6 +19,10 @@
   -webkit-user-select:none;
 }
 
+.shield-indicator {
+  background: 
+}
+
 #bottom-frame {
   bottom:50px;
   position: absolute;
@@ -126,15 +130,15 @@
   border-radius:100%;
 }
 .card-mana-indicator{
-  background-color:blue;
+  background-color:#ccffff;
 }
 
 .card-stamina-indicator{
-  background-color:red;
+  background-color:#ff6666;
 }
 
 .card-gold-indicator{
-  background-color:yellow;
+  background-color:#ffff66;
 }
 .inline-block {
   display: inline-block;
@@ -258,22 +262,24 @@
   width: 75px;
   font-size:40px;
 }
+
 .mana-indicator {
   height: 50px;
   width: 50px;
   font-size: 30px;
+  background-color: #ccffff
 }
 .stamina-indicator {
   height: 50px;
   width: 50px;
   font-size: 30px;
-
+  background-color: #ff6666
 }
 .gold-indicator {
   height: 50px;
   width: 50px;
   font-size: 30px;
-
+  background-color: #ffff66
 }
 
 .castle-indicator.max-attribute {

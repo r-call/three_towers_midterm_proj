@@ -130,6 +130,3 @@ DEPENDENCIES
   sqlite3
   thin
   tux
-
-BUNDLED WITH
-   1.11.2
