@@ -183,11 +183,11 @@ $(document).ready(function() {
         $('#played-card-container .card-stamina-indicator').text(parsed['last_played_card']['stamina_cost']);
         $('#played-card-container .card-gold-indicator').text(parsed['last_played_card']['gold_cost']);
         $('#played-card-container .card-image-image').attr("src",parsed['last_played_card']['image_url']);
-        colourCard( $('#played-card-container') );
         $('#played-card-container').removeClass('invisible');
       } else {
         $('#played-card-container').addClass('invisible');
       }
+      colourCard( $('#played-card-container') );
 
       refreshAttributeDisplay();
       if ( parsed['current_game_winner_id'] && (parsed['current_game_winner_id'] == parsed['player_id']) ) {
