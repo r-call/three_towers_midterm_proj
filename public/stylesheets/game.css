@@ -20,7 +20,7 @@
 }
 
 .shield-indicator {
-  background: 
+  background:
 }
 
 #bottom-frame {
@@ -33,7 +33,9 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+.invisible div {
+  visibility: hidden;
+}
 .veil {
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
 }
@@ -45,14 +47,13 @@
 }
 .card {
   text-align:left;
-  background-color: #5EB4C7;
+  background-color: grey;
   cursor:default;
   width: 170px;
   height: 280px;
   margin: 0 auto;
   padding-top: 2px;
   display:inline-block;
-
 }
 
 .card-title {
@@ -66,8 +67,8 @@
 }
 .card-image {
   background-color:white;
-  width: 155px;
-  height: 115px;
+  width: 90%;
+  height: 40%;
   margin: 4% auto;
 }
 
@@ -196,7 +197,7 @@
   width: 60px;
   height: 40px;
 }
-#player-card-container {
+#played-card-container {
   display: inline-block;
 }
 
@@ -216,8 +217,6 @@
 }
 
 #deck {
-  font-family: Futura;
-  font-size: 40px;
   font-family: Futura;
   font-size: 40px;
   text-align: center;

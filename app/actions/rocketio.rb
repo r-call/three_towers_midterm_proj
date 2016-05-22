@@ -48,7 +48,8 @@ io.on :reload_request do |msg, client|
     opponent_gold:  @opponent ? @opponent.gold : '',
     current_player_id: @game.current_player_id,
     current_game_winner_id: @game.winner_id,
-    current_game_loser_id: @game.loser_id
+    current_game_loser_id: @game.loser_id,
+    last_played_card: @game.show_last_card_played
   }
   io.push :reload, @total_data.to_json, :to => client.session
   puts "@@@@@@@@@ json data pushed to browser"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522001902) do
+ActiveRecord::Schema.define(version: 20160522215914) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160522001902) do
     t.integer  "last_turn_player_id"
     t.integer  "winner_id"
     t.integer  "loser_id"
+    t.integer  "last_card_played_id"
   end
 
   create_table "held_cards", force: :cascade do |t|
