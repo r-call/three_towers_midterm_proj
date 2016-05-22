@@ -73,6 +73,9 @@ class Player < ActiveRecord::Base
     
     self.castle += card.own_castle.to_i
     self.shield += card.own_shield.to_i
+    if self.shield < 0
+      self.castle += self.shield
+    end
     self.stamina += card.own_stamina.to_i
     self.mana += card.own_mana.to_i
     self.gold += card.own_gold.to_i
