@@ -53,11 +53,11 @@ $(document).ready(function() {
   }
   function colourCard(card) {
     if ( card.find('.card-type-band p').text() == "Attack" ) {
-      card.addClass('attack');
+      card.addClass('attack').removeClass('item magic');
     } else if ( card.find('.card-type-band p').text() == "Magic" ) {
-      card.addClass('magic');
+      card.addClass('magic').removeClass('item attack');
     } else if ( card.find('.card-type-band p').text() == "Item" ) {
-      card.addClass('item');
+      card.addClass('item').removeClass('attack magic');;
     }
   }
 
@@ -177,8 +177,7 @@ $(document).ready(function() {
       $('#mana-regen-indicator-p2').text(parsed['opp_mana_regen']);
       $('#stamina-regen-indicator-p2').text(parsed['opp_stamina_regen']);
       $('#gold-regen-indicator-p2').text(parsed['opp_gold_regen']);
-      
-      refreshAttributeDisplay();      
+
       colourCards();
       veilCards();
 

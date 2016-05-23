@@ -81,19 +81,23 @@
 }
 
 .card-type-band {
-  background-color: #F7F7F7;
+  background-color: beige;
   width: 90%;
-  height: 7%;
+  height: 20px;
   margin: 4% auto;
+  box-shadow: inset 0 0 3px 1px rgba(0,0,0,.4);
+  bottom:9px;
 }
 .card-description {
-  background-color: #F7F7F7;
+  background-color: beige;
   width: 90%;
   height: 30%;
   margin: 4% auto;
   vertical-align: bottom;
   position: relative;
   overflow: auto;
+  box-shadow: inset 0 0 3px 1px rgba(0,0,0,.4);
+  font-weight: bold;
 }
 .card-description-text {
   font-family: Lato;
@@ -105,10 +109,12 @@
 
 .card-type-text {
   font-family: Lato;
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: bold;
   color:#505050;
   padding:4px;
   margin:0;
+
 }
 
 .discard-button {
@@ -122,13 +128,19 @@
   background-color:#F36731;
 }
 .card-attribute-indicator {
-  height:15px;
-  width:15px;
+  height:18px;
+  width:18px;
+  text-align:center;
+  padding:0;
+  line-height:18px;
+  vertical-align:middle;
   display:none;
   float:right;
-  margin-right:8px;
-  margin-bottom:5px;
+  margin-right:9px;
+  margin-top:5px;
   border-radius:100%;
+  font-weight:bold;
+
 }
 .card-mana-indicator{
   background-color:#ccffff;
@@ -153,15 +165,15 @@
 }*/
 
 .attack {
-  background-color:grey;
+  background-color:#4BA2E6;
 }
 
 .item {
-  background-color:green;
+  background-color:#719E3B;
 }
 
 .magic {
-  background-color:pink;
+  background-color:#9F67A2;
 }
 #hand-card-1 {
   transform: translateY(35px) rotate(-10deg);
