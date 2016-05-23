@@ -100,7 +100,7 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Chocobo
+- name: Chocobomb
   description: Chocobomb explodes with 10 damage.
   image_url: /images/chocobo.jpg
   card_type: Attack
@@ -520,56 +520,6 @@
   opp_castle: 0
   mana_cost: 0
   gold_cost: -5
-  stamina_cost: 0
-  own_mana_rate: 0
-  own_gold_rate: 0
-  own_stamina_rate: 0
-  opp_mana_rate: 0
-  opp_gold_rate: 0
-  opp_stamina_rate: 0
-  attr_swap: null
-
-- name: Raging Spirit
-  description: Spirit of fire smites both players for 15 damage
-  image_url: /images/super_ball.jpg
-  card_type: Item
-  own_mana: 0
-  own_gold: 0
-  own_stamina: 0
-  own_shield: -15
-  own_castle: 0
-  opp_mana: 0
-  opp_gold: 0
-  opp_stamina: 0
-  opp_shield: -15
-  opp_castle: 0
-  mana_cost: -4
-  gold_cost: 0
-  stamina_cost: 0
-  own_mana_rate: 0
-  own_gold_rate: 0
-  own_stamina_rate: 0
-  opp_mana_rate: 0
-  opp_gold_rate: 0
-  opp_stamina_rate: 0
-  attr_swap: null
-
-- name: Heavy Storm
-  description: Natural disaster makes both players lose 4 of each resource.
-  image_url: /images/super_ball.jpg
-  card_type: Item
-  own_mana: -4
-  own_gold: -4
-  own_stamina: -4
-  own_shield: 0
-  own_castle: 0
-  opp_mana: -4
-  opp_gold: -4
-  opp_stamina: -4
-  opp_shield: 0
-  opp_castle: 0
-  mana_cost: -2
-  gold_cost: 0
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0

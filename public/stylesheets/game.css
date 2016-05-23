@@ -252,6 +252,8 @@
 .indicator {
   font-family: Futura;
   text-align:left;
+  border-radius:100%;
+
 }
 
 .indicator-box {
@@ -288,25 +290,94 @@
 }
 
 .mana-indicator {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   font-size: 30px;
-  background-color: #ccffff
+  background-color: #85CCD8;
 }
 .stamina-indicator {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   font-size: 30px;
-  background-color: #ff6666
+  background-color: #ff6666;
 }
 .gold-indicator {
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   font-size: 30px;
-  background-color: #ffff66
+  background-color: #E6E62C;
 }
 
-.castle-indicator.max-attribute {
+#mana-indicator-p1 {
+  text-align:center;
+  line-height:60px;
+  vertical-align:middle;
+}
+#mana-regen-indicator-p1 {
+  position:relative;
+  right:40px;
+  bottom:25px;
+}
+#stamina-indicator-p1 {
+  text-align:center;
+  line-height:60px;
+  vertical-align:middle;
+}
+#stamina-regen-indicator-p1 {
+  position:relative;
+  right:40px;
+  bottom:25px;
+}
+#gold-indicator-p1 {
+  text-align:center;
+  line-height:60px;
+  vertical-align:middle;
+}
+#gold-regen-indicator-p1 {
+  position:relative;
+  right:40px;
+  bottom:25px;
+}
+#mana-indicator-p2 {
+  text-align:center;
+  line-height:60px;
+  vertical-align:middle;
+}
+#mana-regen-indicator-p2 {
+  position:relative;
+  left:43px;
+  top:45px;
+  float:right;
+}
+#stamina-indicator-p2 {
+  text-align:center;
+  line-height:60px;
+  vertical-align:middle;
+}
+#stamina-regen-indicator-p2 {
+  float:right;
+  position:relative;
+  left:43px;
+  top:45px;
+}
+#gold-indicator-p2 {
+  text-align:center;
+  line-height:60px;
+  vertical-align:middle;
+}
+#gold-regen-indicator-p2 {
+  float:right;
+  position:relative;
+  left:43px;
+  top:45px;
+}
+.shit-label{
+  float:right;
+  clear:both;
+  margin:0;
+  padding:0;
+}
+/*.castle-indicator.max-attribute {
   font-weight:bolder;
   font-size: 70px;
   color:green;
@@ -316,4 +387,4 @@
   font-weight:bolder;
   font-size: 50px;
   color:green;
-}
+}*/
