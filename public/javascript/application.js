@@ -14,6 +14,8 @@ $(document).ready(function() {
 
   io.on("connect", function() {
     io.push("reload_request", {"game":game_id, "player":player_id});
+    io.push("new_player", "new player, so everyone refresh");
+
   });
 
   // add class/remove class if max attribute

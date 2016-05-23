@@ -8,6 +8,10 @@
 
 io = Sinatra::RocketIO
 
+io.on :new_player do |msg,client|
+  io.push :game_updated, "update your game, something changed", :channel => client.channel
+end
+
 io.on :play do |msg, client|
   puts "@@@@@@@@@@@@@received 'play' from browser"
   @game = Game.find(client.channel.to_i)
@@ -20,6 +24,8 @@ io.on :play do |msg, client|
   io.push :game_updated, "update your game, something changed", :channel => client.channel
   puts "@@@@@@@@@@@sending 'game updated' to browsers"
 end
+
+
 
 io.on :reload_request do |msg, client|
   puts "@@@@@@@@@@sending response to 'reload request'"
