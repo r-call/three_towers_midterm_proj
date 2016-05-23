@@ -417,11 +417,13 @@
   clear:both;
   margin:0;
   padding:0;
+  visibility: hidden;
 }
 
 .left-shit-label {
   margin:0;
   padding:0;
+  visibility: hidden;
 }
 /*.castle-indicator.max-attribute {
   font-weight:bolder;
