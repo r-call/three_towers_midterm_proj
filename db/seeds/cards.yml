@@ -1,7 +1,7 @@
 # Attack
 
 - name: Black Mage
-  description: Attacks with 20 damage.
+  description: Arcane blast attacks for 30 damage.
   image_url: /images/black_mage.jpg
   card_type: Attack
   own_mana: 0
@@ -12,7 +12,7 @@
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
-  opp_shield: -20
+  opp_shield: -30
   opp_castle: 0
   mana_cost: -6
   gold_cost: 0
@@ -26,18 +26,18 @@
   attr_swap: null
 
 - name: White Mage
-  description: Attacks with 12 damage. Heals castle 10.
+  description: Lunar magic hits 18 damage. Heals castle 12.
   image_url: /images/white_mage.jpg
   card_type: Attack
   own_mana: 0
   own_gold: 0
   own_stamina: 0
   own_shield: 0
-  own_castle: 10
+  own_castle: 12
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
-  opp_shield: -12
+  opp_shield: -18
   opp_castle: 0
   mana_cost: -6
   gold_cost: 0
@@ -50,8 +50,8 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Warrior
-  description: Attacks with 20 damage.
+- name: Chaos Warrior
+  description: Mighty sword swings for 20 damage.
   image_url: /images/warrior.jpg
   card_type: Attack
   own_mana: 0
@@ -75,8 +75,8 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Thief
-  description: Attacks castle directly with 10 damage. Steals 5 gold from opponent.
+- name: Lupin the Thief
+  description: Bypass shield and attack with 15 damage. Pillage 5 gold from opponent.
   image_url: /images/thief.jpg
   card_type: Attack
   own_mana: 0
@@ -88,10 +88,10 @@
   opp_gold: -5
   opp_stamina: 0
   opp_shield: 0
-  opp_castle: -10
+  opp_castle: -15
   mana_cost: 0
   gold_cost: 0
-  stamina_cost: -5
+  stamina_cost: -6
   own_mana_rate: 0
   own_gold_rate: 0
   own_stamina_rate: 0
@@ -101,7 +101,7 @@
   attr_swap: null
 
 - name: Chocobo
-  description: Attacks with 5 damage.
+  description: Chocobomb explodes with 10 damage.
   image_url: /images/chocobo.jpg
   card_type: Attack
   own_mana: 0
@@ -112,7 +112,7 @@
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
-  opp_shield: -5
+  opp_shield: -10
   opp_castle: 0
   mana_cost: 0
   gold_cost: -1
@@ -125,15 +125,15 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Paladin
-  description: Attacks with 30 damage.
+- name: Blood Paladin
+  description: Vampirism hits for 30 damage, steals 10 castle health.
   image_url: /images/paladin.jpg
   card_type: Attack
   own_mana: 0
   own_gold: 0
   own_stamina: 0
   own_shield: 0
-  own_castle: 0
+  own_castle: 10
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
@@ -150,8 +150,8 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Mercenary
-  description: Attacks with 25 damage.
+- name: Desert Mercenary
+  description: Kamehameha for 40 damage, lose 2 stamina and mana regeneration.
   image_url: /images/mercenary.jpg
   card_type: Attack
   own_mana: 0
@@ -162,14 +162,14 @@
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
-  opp_shield: -25
+  opp_shield: -40
   opp_castle: 0
   mana_cost: 0
   gold_cost: -8
   stamina_cost: 0
-  own_mana_rate: 0
+  own_mana_rate: -2
   own_gold_rate: 0
-  own_stamina_rate: 0
+  own_stamina_rate: -2
   opp_mana_rate: 0
   opp_gold_rate: 0
   opp_stamina_rate: 0
@@ -177,8 +177,8 @@
 
 # Magic
 
-- name: Shield
-  description: Increase shield by 20.
+- name: Shield of Aegis
+  description: Recover your shield by 20 points.
   image_url: /images/shield.jpg
   card_type: Magic
   own_mana: 0
@@ -191,7 +191,7 @@
   opp_stamina: 0
   opp_shield: 0
   opp_castle: 0
-  mana_cost: -7
+  mana_cost: -5
   gold_cost: 0
   stamina_cost: 0
   own_mana_rate: 0
@@ -202,7 +202,7 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Cure
+- name: Healing Charity
   description: Increase castle health by 15.
   image_url: /images/cure.jpg
   card_type: Magic
@@ -228,7 +228,7 @@
   attr_swap: null
 
 - name: Muddle
-  description: Increase mana regeneration by 2. Decrease gold regeneration by 1.
+  description: Increase mana regeneration by 3. Decrease gold regeneration by 1.
   image_url: /images/muddle.jpg
   card_type: Magic
   own_mana: 0
@@ -244,7 +244,7 @@
   mana_cost: -6
   gold_cost: 0
   stamina_cost: 0
-  own_mana_rate: 2
+  own_mana_rate: 3
   own_gold_rate: -1
   own_stamina_rate: 0
   opp_mana_rate: 0
@@ -252,8 +252,8 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Imp
-  description: Reduce opponent stamina regeneration rate by 1.
+- name: Magpie Impling
+  description: Trickster that lowers opponent stamina and gold regeneration rate by 1.
   image_url: /images/imp.jpg
   card_type: Magic
   own_mana: 0
@@ -273,12 +273,12 @@
   own_gold_rate: 0
   own_stamina_rate: 0
   opp_mana_rate: 0
-  opp_gold_rate: 0
+  opp_gold_rate: -1
   opp_stamina_rate: -1
   attr_swap: null
 
-- name: Regen
-  description: Boost stamina attribute regeneration rate by 2.
+- name: Senzu Bean
+  description: A refreshing bean that boosts stamina attribute regeneration rate by 3.
   image_url: /images/regen.jpg
   card_type: Magic
   own_mana: 0
@@ -296,14 +296,14 @@
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0
-  own_stamina_rate: 2
+  own_stamina_rate: 3
   opp_mana_rate: 0
   opp_gold_rate: 0
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Absorb
-  description: Reduce opponents mana regeneration by 1. Own mana regeneration increases by 1.
+- name: Spell Absorption
+  description: Reduce opponents mana regeneration by 2. Own mana regeneration increases by 2.
   image_url: /images/absorb.jpg
   card_type: Magic
   own_mana: 0
@@ -319,29 +319,29 @@
   mana_cost: -5
   gold_cost: 0
   stamina_cost: 0
-  own_mana_rate: 1
+  own_mana_rate: 2
   own_gold_rate: 0
   own_stamina_rate: 0
-  opp_mana_rate: -1
+  opp_mana_rate: -2
   opp_gold_rate: 0
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Quake
-  description: Does 15 damage to both parties. Bypasses shield.
+- name: Torrential Tribute
+  description: Does 25 damage to both parties even through shield.
   image_url: /images/quake.jpg
   card_type: Magic
   own_mana: 0
   own_gold: 0
   own_stamina: 0
   own_shield: 0
-  own_castle: -15
+  own_castle: -25
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
   opp_shield: 0
-  opp_castle: -15
-  mana_cost: -5
+  opp_castle: -25
+  mana_cost: -7
   gold_cost: 0
   stamina_cost: 0
   own_mana_rate: 0
@@ -354,22 +354,22 @@
 
 # Item
 
-- name: Potion
-  description: Boost castle by 15
+- name: Super Potion
+  description: Reinvigorate the castle by 20.
   image_url: /images/potion.jpg
   card_type: Item
   own_mana: 0
   own_gold: 0
   own_stamina: 0
   own_shield: 0
-  own_castle: 15
+  own_castle: 20
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
   opp_shield: 0
   opp_castle: 0
   mana_cost: 0
-  gold_cost: -6
+  gold_cost: -4
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0
@@ -379,8 +379,8 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Elixir
-  description: Increases mana by 5, shield by 15, castle by 20.
+- name: Solemn Judgment
+  description: Divine judgment increases your mana by 5, shield by 15, castle by 20.
   image_url: /images/elixir.jpg
   card_type: Item
   own_mana: 5
@@ -394,7 +394,7 @@
   opp_shield: 0
   opp_castle: 0
   mana_cost: 0
-  gold_cost: -7
+  gold_cost: -5
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0
@@ -405,7 +405,7 @@
   attr_swap: null
 
 - name: Smoke Bomb
-  description: Reduce opponent mana, gold, and stamina by 5.
+  description: Distract your opponent making them lose mana, gold, and stamina by 5.
   image_url: /images/smoke_bomb.jpg
   card_type: Item
   own_mana: 0
@@ -419,7 +419,7 @@
   opp_shield: 0
   opp_castle: 0
   mana_cost: 0
-  gold_cost: -6
+  gold_cost: -5
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0
@@ -429,11 +429,11 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Ether
-  description: Boost mana by 10.
+- name: Clarity Potion
+  description: Restores mana by 12.
   image_url: /images/ether.jpg
   card_type: Item
-  own_mana: 10
+  own_mana: 12
   own_gold: 0
   own_stamina: 0
   own_shield: 0
@@ -455,7 +455,7 @@
   attr_swap: null
 
 - name: Magicite Shard
-  description: Boosts mana regen rate by 2.
+  description: Magical artifact increases mana regen rate by 2.
   image_url: /images/magicite.jpg
   card_type: Item
   own_mana: 0
@@ -479,8 +479,8 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Poison
-  description: Enemy castle -10, stamina -7, and mana -7.
+- name: Mist Valley Poison
+  description: Ancient civilization poison damages enemy castle by 15, stamina -3, and mana -3.
   image_url: /images/poison.jpg
   card_type: Item
   own_mana: 0
@@ -488,13 +488,13 @@
   own_stamina: 0
   own_shield: 0
   own_castle: 0
-  opp_mana: -7
+  opp_mana: -3
   opp_gold: 0
-  opp_stamina: -7
+  opp_stamina: -3
   opp_shield: 0
   opp_castle: -10
   mana_cost: 0
-  gold_cost: -6
+  gold_cost: -8
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0
@@ -504,22 +504,72 @@
   opp_stamina_rate: 0
   attr_swap: null
 
-- name: Super Ball
-  description: Does 20 damage to both parties.
+- name: HAX ball
+  description: Ball of doom hits both players for 30 damage.
   image_url: /images/super_ball.jpg
   card_type: Item
   own_mana: 0
   own_gold: 0
   own_stamina: 0
-  own_shield: -20
+  own_shield: -30
   own_castle: 0
   opp_mana: 0
   opp_gold: 0
   opp_stamina: 0
-  opp_shield: -20
+  opp_shield: -30
   opp_castle: 0
   mana_cost: 0
   gold_cost: -5
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Raging Spirit
+  description: Spirit of fire smites both players for 15 damage
+  image_url: /images/super_ball.jpg
+  card_type: Item
+  own_mana: 0
+  own_gold: 0
+  own_stamina: 0
+  own_shield: -15
+  own_castle: 0
+  opp_mana: 0
+  opp_gold: 0
+  opp_stamina: 0
+  opp_shield: -15
+  opp_castle: 0
+  mana_cost: -4
+  gold_cost: 0
+  stamina_cost: 0
+  own_mana_rate: 0
+  own_gold_rate: 0
+  own_stamina_rate: 0
+  opp_mana_rate: 0
+  opp_gold_rate: 0
+  opp_stamina_rate: 0
+  attr_swap: null
+
+- name: Heavy Storm
+  description: Natural disaster makes both players lose 4 of each resource.
+  image_url: /images/super_ball.jpg
+  card_type: Item
+  own_mana: -4
+  own_gold: -4
+  own_stamina: -4
+  own_shield: 0
+  own_castle: 0
+  opp_mana: -4
+  opp_gold: -4
+  opp_stamina: -4
+  opp_shield: 0
+  opp_castle: 0
+  mana_cost: -2
+  gold_cost: 0
   stamina_cost: 0
   own_mana_rate: 0
   own_gold_rate: 0
