@@ -99,6 +99,7 @@
   position: relative;
   overflow: auto;
   font-weight: bold;
+  margin-bottom:0;
 }
 .card-description-text {
   font-family: Lato;
@@ -119,22 +120,26 @@
 }
 
 .discard-button {
-  height:30px;
+  /*height:30px;*/
   width:70px;
   display:inline-block;
-  float:right;
-  margin-right:8px;
-  margin-top:3px;
+  text-align:center;
+  /*margin-right:8px;
+  margin-top:3px;*/
   border-radius:4px;
-  background-color:#F36731;
-
+  background-color:rgba(105,105,105,0.4);
+}
+.discard-button:hover {
+  color:#D83030;
+  font-weight:bolder;
 }
 .card-attribute-indicator {
   height:18px;
   width:18px;
+  color: black;
   text-align:center;
-  padding:0;
-  line-height:18px;
+  padding:0 0 5px 0;
+  line-height:17px;
   vertical-align:middle;
   display:none;
   float:right;
@@ -145,7 +150,7 @@
 
 }
 .card-mana-indicator{
-  background-color:#ccffff;
+  background-color:#85CCD8;
 }
 
 .card-stamina-indicator{
@@ -153,18 +158,16 @@
 }
 
 .card-gold-indicator{
-  background-color:#ffff66;
+  background-color:#E6E62C;
 }
 .inline-block {
   display: inline-block;
 }
-/*
+
 .card-bottom-band {
-  background-color: #F7F7F7;
-  width: 90%;
-  height: 10%;
-  margin: 4% auto;
-}*/
+  margin: 0 auto;
+  text-align: center;
+}
 
 .attack {
   background-color:#4BA2E6;

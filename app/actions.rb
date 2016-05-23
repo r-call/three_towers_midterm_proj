@@ -1,4 +1,3 @@
-require_relative './actions/api'
 require_relative './actions/rocketio'
 
 #'/games/new' is the entry point. A new player is created when you visit. Your player ID is stored as a session cookie.
@@ -34,6 +33,16 @@ post '/games' do
   end
 
   redirect "games/#{@game.id}"
+end
+
+get '/games/winner' do
+  session.clear
+  erb :'/game/winner'
+end
+
+get '/games/loser' do
+  session.clear
+  erb :'/game/loser'
 end
 
 # the main game view is shown at '/game/:id'
