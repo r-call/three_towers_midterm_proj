@@ -29,17 +29,25 @@ class Game < ActiveRecord::Base
     when "play"
       if resources_available?(player,card)
         player.play_card(card, id)
+        opp.reload
+        player.reload
         update(last_card_played_id: card.id)
-        hp_setter(player_1, player_2)
+        hp_setter(player, opp)
+        opp.reload
+        player.reload
         player.destroy_card(card_num, id)
         player.generate_card(id)
         turn_tracker
+        player.reload
+        opp.reload
         opp.regen_resources
       end
     when "discard"
       player.destroy_card(card_num, id)
       player.generate_card(id)
       turn_tracker
+      player.reload
+      opp.reload
       opp.regen_resources
     when "pass"
       turn_tracker
