@@ -8,6 +8,9 @@
   height: 650px;
   background-color: white;
   border: 1px solid black;
+  /*background-image: url("/images/background.png");
+  background-size: 100%;
+  background-position: left top;*/
 }
 
 .subtle-shadow {
@@ -81,22 +84,20 @@
 }
 
 .card-type-band {
-  background-color: beige;
+  background-color: white;
   width: 90%;
   height: 20px;
   margin: 4% auto;
-  box-shadow: inset 0 0 3px 1px rgba(0,0,0,.4);
   bottom:9px;
 }
 .card-description {
-  background-color: beige;
+  background-color: white;
   width: 90%;
   height: 30%;
   margin: 4% auto;
   vertical-align: bottom;
   position: relative;
   overflow: auto;
-  box-shadow: inset 0 0 3px 1px rgba(0,0,0,.4);
   font-weight: bold;
 }
 .card-description-text {
@@ -118,14 +119,15 @@
 }
 
 .discard-button {
-  height:20px;
-  width:20px;
+  height:30px;
+  width:70px;
   display:inline-block;
   float:right;
   margin-right:8px;
   margin-top:3px;
-  border-radius:100%;
+  border-radius:4px;
   background-color:#F36731;
+
 }
 .card-attribute-indicator {
   height:18px;
