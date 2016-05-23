@@ -165,6 +165,13 @@ class Game < ActiveRecord::Base
     if player_2.gold < 0
       player_2.gold = 0
     end
+    player_1.stamina_regen_rate = 1 if player_1.stamina_regen_rate < 1
+    player_1.mana_regen_rate = 1 if player_1.mana_regen_rate < 1
+    player_1.gold_regen_rate = 1 if player_1.gold_regen_rate < 1
+    player_2.stamina_regen_rate = 1 if player_2.stamina_regen_rate < 1
+    player_2.mana_regen_rate = 1 if player_2.mana_regen_rate < 1
+    player_2.gold_regen_rate = 1 if player_2.gold_regen_rate < 1
+
     player_1.save
     player_2.save
   end
