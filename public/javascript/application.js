@@ -51,11 +51,11 @@ $(document).ready(function() {
   }
   function colourCard(card) {
     if ( card.find('.card-type-band p').text() == "Attack" ) {
-      card.addClass('attack');
+      card.addClass('attack').removeClass('item magic');
     } else if ( card.find('.card-type-band p').text() == "Magic" ) {
-      card.addClass('magic');
+      card.addClass('magic').removeClass('item attack');
     } else if ( card.find('.card-type-band p').text() == "Item" ) {
-      card.addClass('item');
+      card.addClass('item').removeClass('attack magic');;
     }
   }
 
@@ -170,8 +170,8 @@ $(document).ready(function() {
       $('#hand-card-5 .card-gold-indicator').text(parsed['cards'][4]['gold_cost'])
       $('#hand-card-5 .card-image-image').attr("src",parsed['cards'][4]['image_url']);
 
-      colourCards();
       veilCards();
+      colourCards();
 
       // populate last played card
 
