@@ -43,9 +43,11 @@ get '/games/:id/reload' do
 end
 
 get '/games/winner' do
+  session.clear
   erb :'/game/winner'
 end
 
 get '/games/loser' do
+  session.clear
   erb :'/game/loser'
 end

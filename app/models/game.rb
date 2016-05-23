@@ -134,11 +134,11 @@ class Game < ActiveRecord::Base
     player_1.castle = 0 if player_1.castle < 0
     player_1.castle = 100 if player_1.castle >100
     player_1.shield = 0 if player_1.shield < 0
-    player_1.shield = 50 if player_1.shield > 50
+    player_1.shield = 50 if player_1.shield > 25
     player_2.castle = 0 if player_2.castle < 0
     player_2.castle = 100 if player_2.castle > 100
     player_2.shield = 0 if player_2.shield < 0
-    player_2.shield = 50 if player_2.shield >50
+    player_2.shield = 50 if player_2.shield >25
     if player_1.mana < 0
       player_1.mana = 0
     end
