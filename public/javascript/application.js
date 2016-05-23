@@ -169,9 +169,15 @@ $(document).ready(function() {
       $('#hand-card-5 .card-stamina-indicator').text(parsed['cards'][4]['stamina_cost']);
       $('#hand-card-5 .card-gold-indicator').text(parsed['cards'][4]['gold_cost'])
       $('#hand-card-5 .card-image-image').attr("src",parsed['cards'][4]['image_url']);
+      $('#mana-regen-indicator-p1').text(parsed['curr_player_mana_regen']);
+      $('#stamina-regen-indicator-p1').text(parsed['curr_player_stamina_regen']);
+      $('#gold-regen-indicator-p1').text(parsed['curr_player_gold_regen']);
+      $('#mana-regen-indicator-p2').text(parsed['opp_mana_regen']);
+      $('#stamina-regen-indicator-p2').text(parsed['opp_stamina_regen']);
+      $('#gold-regen-indicator-p2').text(parsed['opp_gold_regen']);
 
-      veilCards();
       colourCards();
+      veilCards();
 
       // populate last played card
 

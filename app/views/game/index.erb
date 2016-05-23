@@ -23,6 +23,15 @@
     <div id="gold-indicator-p1" class="gold-indicator p1-indicator indicator">
       <%= @player.gold %>
     </div>
+    <div id="mana-regen-indicator-p1" class="mana-indicator p1-indicator indicator">
+      <%= @player.mana_regen_rate %>
+    </div>
+    <div id="stamina-regen-indicator-p1" class="stamina-indicator p1-indicator indicator">
+      <%= @player.stamina_regen_rate %>
+    </div>
+    <div id="gold-regen-indicator-p1" class="gold-indicator p1-indicator indicator">
+      <%= @player.gold_regen_rate %> 
+    </div>
 
   </div>
 
@@ -42,6 +51,15 @@
     </div>
     <div id="gold-indicator-p2" class="gold-indicator p2-indicator indicator">
       <%= @opponent ? @opponent.gold : '' %>
+    </div>
+    <div id="mana-regen-indicator-p2" class="mana-indicator p2-indicator indicator">
+      <%= @opponent ? @opponent.mana_regen_rate : '' %>
+    </div>
+    <div id="stamina-regen-indicator-p2" class="stamina-indicator p2-indicator indicator">
+      <%= @opponent ? @opponent.stamina_regen_rate : '' %>
+    </div>
+    <div id="gold-regen-indicator-p2" class="gold-indicator p2-indicator indicator">
+      <%= @opponent ? @opponent.gold_regen_rate : '' %> 
     </div>
 
   </div>
