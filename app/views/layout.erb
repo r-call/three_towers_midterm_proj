@@ -23,7 +23,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <!-- <script src="/javascript/gameplay.js"></script> -->
   <!-- <script src="/javascript/ajax.js"></script> -->
+  <script type="text/javascript">
 
+  // PLAYER VARIABLES
+
+  var mp3snd = "/music/bmg.mp3";
+
+  document.write('<audio autoplay="autoplay">');
+  document.write('<source src="'+mp3snd+'" type="audio/mpeg">');
+  document.write('<!--[if lt IE 9]>');
+  document.write('<bgsound src="'+mp3snd+'" loop="1">');
+  document.write('<![endif]-->');
+  document.write('</audio>');
+
+  </script>
 
   <title></title>
 </head>
