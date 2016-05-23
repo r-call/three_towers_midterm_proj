@@ -1,16 +1,18 @@
 #start {
-  width: 25%;
-  position: absolute;
+  min-width: 30%;
+  position: relative;
   top: 25%;
   left: 37.5%;
+  z-index: 1;
 }
 
 #start_banner {
   background-image: url(http://i.imgur.com/pYWjqdL.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100%;
+  height: 60%;
   width: 100%;
+  position: relative;
 }
 
 #background {
@@ -34,11 +36,12 @@
 }
 
 #winner_quote {
-  background-image: url(http://i1279.photobucket.com/albums/y523/textcraft/May%202016%20-%204/088fb1a4ab057f4fcf7d487006499060c7fe5773fd2b6ce2afec6faece8aef02da2e9acae3c77c2aba9bd8f05891b49246ae332611cba5806036e1234aad_zpsdpklei34.png);
+  background-image: url(http://i1279.photobucket.com/albums/y523/textcraft/May%202016%20-%204/088fb1a4ab057f4fcf7d487006499060c7fe57738d6d0f5e70724c4e590020d3876dc8fa66ba53d1ba9bd8f05891b49246ae332611cba5806036e1235fba_zpsizshecfs.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100%;
+  height: 60%;
   width: 100%;
+  position: relative;
 }
 
 #background_for_loser {
@@ -52,51 +55,68 @@
 }
 
 #loser_quote {
-  background-image: url(http://i1279.photobucket.com/albums/y523/textcraft/May%202016%20-%204/088fb1a4ab057f4fcf7d487006499060c7fe577305ca472b74700d7043db6810c3f118fca0a813aaba9bd8f05891b49246ae332611cba5806036e123af62_zpsjuij9ylq.png);
+  background-image: url(http://i1279.photobucket.com/albums/y523/textcraft/May%202016%20-%204/088fb1a4ab057f4fcf7d487006499060c7fe577305ca472b74700d7043db6810c3f118fca0a813aaba9bd8f05891b49246ae332611cba5806036e1235fba_zpsgkvbcldm.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100%;
+  height: 40%;
   width: 100%;
+  position: relative;
 }
 
 #home_button {
-  width: 15%;
-  position: absolute;
+  min-width: 100px;
+  position: relative;
   top: 15%;
   left: 43%;
 }
 
 #twitter_button {
-  width: 15%;
-  position: absolute;
+  min-width: 100px;
+  position: relative;
   top: 18.5%;
   left: 43%;
 }
 
 #facebook_button {
-  width: 15%;
-  position: absolute;
+  min-width: 100px;
+  position: relative;
   top: 22%;
   left: 43%;
 }
 
 #home_button2 {
-  width: 15%;
-  position: absolute;
+  min-width: 100px;
+  position: relative;
   top: 50%;
   left: 43%;
 }
 
 #twitter_button2 {
-  width: 15%;
-  position: absolute;
+  min-width: 100px;
+  position: relative;
   top: 53.5%;
   left: 43%;
 }
 
 #facebook_button2 {
-  width: 15%;
-  position: absolute;
+  min-width: 100px;
+  position: relative;
   top: 57%;
   left: 43%;
+}
+
+#twitter_button3 {
+  min-width: 30%;
+  position: relative;
+  top: 25%;
+  left: 37.5%;
+  z-index: 1;
+}
+
+#facebook_button3 {
+  min-width: 30%;
+  position: relative;
+  top: 25%;
+  left: 37.5%;
+  z-index: 1;
 }
