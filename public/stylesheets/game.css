@@ -270,11 +270,10 @@
 }
 
 .p1-indicator {
-
 }
 
 .p2-indicator {
-  float: right;
+  /*float: right;*/
   position: relative;
   clear: right;
 }
@@ -282,11 +281,19 @@
   height:150px;
   width: 150px;
   font-size:60px;
+  background-color: white;
+  vertical-align:middle;
+  line-height:150px;
+  text-align:center;
 }
 .shield-indicator {
-  height: 75px;
-  width: 75px;
+  height: 90px;
+  width: 90px;
   font-size:40px;
+  vertical-align:middle;
+  line-height:90px;
+  background-color:green;
+  text-align:center;
 }
 
 .mana-indicator {
@@ -308,10 +315,20 @@
   background-color: #E6E62C;
 }
 
+#castle-indicator-p1 {
+  margin-left:40px;
+}
+
+#shield-indicator-p1 {
+  margin-left:30px;
+}
+
+
 #mana-indicator-p1 {
   text-align:center;
   line-height:60px;
   vertical-align:middle;
+  margin-left:20px;
 }
 #mana-regen-indicator-p1 {
   position:relative;
@@ -322,58 +339,87 @@
   text-align:center;
   line-height:60px;
   vertical-align:middle;
+  margin-left:15px;
+  margin-top:-25px;
+
 }
 #stamina-regen-indicator-p1 {
   position:relative;
-  right:40px;
+  right:45px;
   bottom:25px;
 }
 #gold-indicator-p1 {
   text-align:center;
   line-height:60px;
   vertical-align:middle;
+  margin-left:10px;
+  margin-top:-25px;
+
 }
 #gold-regen-indicator-p1 {
   position:relative;
-  right:40px;
+  right:50px;
   bottom:25px;
 }
+
+#castle-indicator-p2 {
+  margin-right:40px;
+}
+
+#shield-indicator-p2 {
+  margin-right:30px;
+  left:75px;
+}
+
 #mana-indicator-p2 {
   text-align:center;
   line-height:60px;
   vertical-align:middle;
+  margin-right: 10px;
+  left:100px;
 }
 #mana-regen-indicator-p2 {
   position:relative;
-  left:43px;
-  top:45px;
+  left:-45px;
+  top:-25px;
   float:right;
 }
 #stamina-indicator-p2 {
   text-align:center;
   line-height:60px;
   vertical-align:middle;
+  left:105px;
+  top:-25px;
+
 }
 #stamina-regen-indicator-p2 {
   float:right;
   position:relative;
-  left:43px;
-  top:45px;
+  left:-40px;
+  top:-50px;
 }
 #gold-indicator-p2 {
   text-align:center;
   line-height:60px;
   vertical-align:middle;
+  left:110px;
+  top:-50px;
+
 }
 #gold-regen-indicator-p2 {
   float:right;
   position:relative;
-  left:43px;
-  top:45px;
+  left:-35px;
+  top:-75px;
 }
-.shit-label{
+.shit-label {
   float:right;
   clear:both;
+  margin:0;
+  padding:0;
+}
+
+.left-shit-label {
   margin:0;
   padding:0;
 }
