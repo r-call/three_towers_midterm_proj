@@ -3,6 +3,7 @@ $(document).ready(function() {
   var hasOpponent = false;
   var myTurn = false;
 
+  $('.discard-button').addClass('invisible');
   var game_id = $("#data").attr('game-id');
   var player_id = $("#data").attr('player-id');
 
@@ -214,6 +215,12 @@ $(document).ready(function() {
       } else {
         myTurn = false;
       }
+      if ( myTurn == true ) {
+        $('.discard-button').removeClass('invisible');
+      } else {
+        $('.discard-button').addClass('invisible');
+      }
+      
       checkGameStatus();
     });
 

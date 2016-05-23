@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900);
 
+
 .frame {
   text-align: center;
   position: relative;
@@ -8,9 +9,9 @@
   height: 650px;
   background-color: white;
   border: 1px solid black;
-  /*background-image: url("/images/background.png");
+  background-image: url("/images/background_3.png");
   background-size: 100%;
-  background-position: left top;*/
+  background-position: left top;
 }
 
 .subtle-shadow {
@@ -81,6 +82,7 @@
   position: relative;
   height: 100%;
   margin: 0 auto;
+  border-radius:4px;
 }
 
 .card-type-band {
