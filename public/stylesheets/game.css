@@ -176,14 +176,17 @@
 
 .attack {
   background-color:#4BA2E6;
+  transition: all 1s;
 }
 
 .item {
   background-color:#719E3B;
+  transition: all 1s;
 }
 
 .magic {
   background-color:#9F67A2;
+  transition: all 1s;
 }
 #hand-card-1 {
   transform: translateY(35px) rotate(-10deg);
@@ -425,7 +428,7 @@
   padding:0;
   visibility: hidden;
 }
-/*.castle-indicator.max-attribute {
+.castle-indicator.max-attribute {
   font-weight:bolder;
   font-size: 70px;
   color:green;
@@ -435,4 +438,4 @@
   font-weight:bolder;
   font-size: 50px;
   color:green;
-}*/
+}
