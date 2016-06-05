@@ -1,0 +1,180 @@
+#played-card {
+  font-family: Futura;
+  font-size: 40px;
+  text-align: center;
+  line-height: 280px;
+  vertical-align: middle;
+}
+
+#hand-card-1 {
+  transform: translateY(35px) rotate(-10deg);
+  position:relative;
+  z-index:1;
+}
+
+#hand-card-2 {
+  transform: translateY(10px) rotate(-5deg);
+  position:relative;
+  z-index:2;
+}
+
+#hand-card-3 {
+  position:relative;
+  z-index:3;
+}
+
+#hand-card-4 {
+  transform: translateY(10px)  rotate(5deg);
+  position:relative;
+  z-index:4;
+}
+
+#hand-card-5 {
+  transform: translateY(35px) rotate(10deg);
+  position:relative;
+  z-index:5;
+}
+
+#played-card-container {
+  display: inline-block;
+  margin-top:10px;
+}
+
+.card-bottom-band {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-attribute-indicator {
+  height:18px;
+  width:18px;
+  color: black;
+  text-align:center;
+  padding:0 0 5px 0;
+  line-height:17px;
+  vertical-align:middle;
+  display:none;
+  float:right;
+  margin-right:9px;
+  margin-top:5px;
+  border-radius:100%;
+  font-weight:bold;
+
+}
+.card-mana-indicator{
+  background-color:#85CCD8;
+}
+
+.card-stamina-indicator{
+  background-color:#ff6666;
+}
+
+.card-gold-indicator{
+  background-color:#E6E62C;
+}
+.card {
+  text-align:left;
+  background-color: grey;
+  cursor:default;
+  width: 170px;
+  height: 280px;
+  margin: 0 auto;
+  padding-top: 2px;
+  display:inline-block;
+}
+
+.card-title {
+  width:auto;
+  height:7%;
+  margin: 0% auto;
+  padding-left:10px;
+  font-family: Futura;
+  font-size:16px;
+  display: inline-block;
+}
+.card-image {
+  background-color:white;
+  width: 90%;
+  height: 40%;
+  margin: 4% auto;
+}
+
+.card-image-image {
+  -webkit-user-drag: none;
+  display: block;
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  border-radius:4px;
+}
+
+.card-type-band {
+  background-color: white;
+  width: 90%;
+  height: 20px;
+  margin: 4% auto;
+  bottom:9px;
+}
+.card-description {
+  background-color: white;
+  width: 90%;
+  height: 30%;
+  margin: 4% auto;
+  vertical-align: bottom;
+  position: relative;
+  overflow: auto;
+  font-weight: bold;
+  margin-bottom:0;
+}
+.card-description-text {
+  font-family: Lato;
+  font-size: 11px;
+  color:#505050;
+  padding:4px;
+  margin:0;
+}
+
+.card-type-text {
+  font-family: Lato;
+  font-size: 13px;
+  font-weight: bold;
+  color:#505050;
+  padding:0px 4px;
+  margin:0;
+
+}
+
+.discard-button {
+  /*height:30px;*/
+  width:70px;
+  display:inline-block;
+  text-align:center;
+  /*margin-right:8px;
+  margin-top:3px;*/
+  border-radius:4px;
+  background-color:rgba(105,105,105,0.4);
+}
+.discard-button:hover {
+  color:#D83030;
+  font-weight:bolder;
+}
+
+.basic-card-div {
+  border-radius: 4px;
+  -webkit-user-select:none;
+}
+
+.attack {
+  background-color:#4BA2E6;
+  transition: all 0.3s;
+}
+
+.item {
+  background-color:#719E3B;
+  transition: all 0.3s;
+}
+
+.magic {
+  background-color:#9F67A2;
+  transition: all 0.3s;
+}
