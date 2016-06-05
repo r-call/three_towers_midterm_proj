@@ -1,13 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700,900);
 
-#player-alert-box {
-  margin: auto;
-  text-align: center;
-  font-family: Futura;
-  font-size: 30px;
-  color: red;
-}
-
 .frame {
   height: 650px;
   width: 1200px;
@@ -19,28 +11,6 @@
   background-image: url("/images/background_3.png");
   background-size: 100%;
   background-position: left top;
-}
-
-#bottom-frame {
-  position: relative;
-  bottom: 30%;
-  /*width: 100%;*/
-}
-
-#hand {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#deck {
-  font-family: Futura;
-  font-size: 40px;
-  text-align: center;
-  position:relative;
-  top:-32.8%;
-  left:-1%;
-  background-image: url("/images/deck.png");
-  background-size: 170px 280px;
 }
 
 .shit-label {
@@ -55,4 +25,21 @@
   margin:0;
   padding:0;
   visibility: hidden;
+}
+
+#bottom-frame {
+  position: relative;
+  bottom: -2%;
+}
+
+#hand {
+  margin: auto;
+}
+
+#player-alert-box {
+  margin: auto;
+  text-align: center;
+  font-family: Futura;
+  font-size: 30px;
+  color: red;
 }

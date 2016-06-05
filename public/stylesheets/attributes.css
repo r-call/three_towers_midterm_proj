@@ -1,42 +1,13 @@
-.castle-indicator.max-attribute {
-  font-weight:bolder;
-  font-size: 70px;
-  color:green;
-}
-
-.shield-indicator.max-attribute {
-  font-weight:bolder;
-  font-size: 50px;
-  color:green;
-}
 .indicator {
   font-family: Futura;
   text-align:left;
   border-radius:100%;
-
 }
 
 .indicator-box {
   position: absolute;
 }
 
-#indicator-box-p1 {
-
-}
-
-#indicator-box-p2 {
-  right:0;
-
-}
-
-.p1-indicator {
-}
-
-.p2-indicator {
-  /*float: right;*/
-  position: relative;
-  clear: right;
-}
 .castle-indicator {
   height:150px;
   width: 150px;
@@ -46,6 +17,13 @@
   line-height:150px;
   text-align:center;
 }
+
+.castle-indicator.max-attribute {
+  font-weight:bolder;
+  font-size: 70px;
+  color:green;
+}
+
 .shield-indicator {
   height: 90px;
   width: 90px;
@@ -54,6 +32,12 @@
   line-height:90px;
   background-color:#82BD7B;
   text-align:center;
+}
+
+.shield-indicator.max-attribute {
+  font-weight:bolder;
+  font-size: 50px;
+  color:green;
 }
 
 .mana-indicator {
@@ -75,6 +59,15 @@
   background-color: #E6E62C;
 }
 
+
+
+#indicator-box-p1 {
+
+}
+
+#indicator-box-p2 {
+  right:0;
+}
 #castle-indicator-p1 {
   margin-left:40px;
 }
