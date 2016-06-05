@@ -425,7 +425,7 @@
   padding:0;
   visibility: hidden;
 }
-/*.castle-indicator.max-attribute {
+.castle-indicator.max-attribute {
   font-weight:bolder;
   font-size: 70px;
   color:green;
@@ -435,4 +435,4 @@
   font-weight:bolder;
   font-size: 50px;
   color:green;
-}*/
+}
