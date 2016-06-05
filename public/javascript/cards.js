@@ -1,6 +1,8 @@
 var cards = (function() {
 
+  // PUBLIC
 
+  // Refresh card display
   function refresh() {
     colourCards();
     refreshAttributeDisplay();
@@ -17,24 +19,27 @@ var cards = (function() {
     }
   }
 
+  // Try to play a card
   function tryPlay(event) {
     event.stopPropagation();
     var cardNum = $(this).attr('value');
     if (cards.canPlay(cardNum)) {
       game.postPlay(cardNum, "play");
+      settings.myTurn = false;
     } else {
-      // temp for testing. should do nothing for else ultimately
-      console.log("Can't play - no opponent or not your turn");
+      // Do nothing
     }
   }
 
+  // Try to discard a card
   function tryDiscard(event) {
     event.stopPropagation();
     var cardNum = $(this).attr('value');
     if ( settings.hasOpponent && settings.myTurn ) {
       game.postPlay(cardNum, "discard");
+      settings.myTurn = false;
     } else {
-      console.log("Can't discard - no opponent or not your turn")
+      // Do nothing
     }
   }
 
@@ -70,6 +75,7 @@ var cards = (function() {
     });
   }
 
+  // Show discard button if it's player's turn
   function setDiscardDisplay() {
     if (settings.myTurn == true) {
       $('.discard-button').removeClass('invisible');
@@ -92,6 +98,8 @@ var cards = (function() {
       }
     }
   }
+
+  // API
 
   var api = {
     refresh: refresh,

@@ -1,23 +1,33 @@
 var game = (function() {
 
+  // STATE
+
+  // Holds all game data
+  var state = {};
+
+  // PUBLIC
+
+  // Refresh and display game settings
   function refresh(data) {
-    checkGameOver(game.state.current_game_winner_id, settings.playerId);
-    setHasOpponent(game.state.opponent_id);
-    setMyTurn(game.state.current_player_id);
+    tryGameOver();
+    setHasOpponent();
+    setMyTurn();
     showStatus();
   }
 
+  // Play or discard a card
   function postPlay(cardNum,action) {
     var params = {
       card:   cardNum,
       action: action,
       player: settings.playerId
     }
-    settings.io.push("play", params);
+    utilities.io.push("play", params);
   }
 
   // PRIVATE
 
+  // Update status banner
   function showStatus() {
     if (settings.hasOpponent) {
       if (settings.myTurn) {
@@ -30,34 +40,33 @@ var game = (function() {
     }
   }
 
-  function setHasOpponent(id) {
-    if (typeof id === 'number') {
+  // Update hasOpponent attribute
+  function setHasOpponent() {
+    if (typeof game.state.opponent_id === 'number') {
       settings.hasOpponent = true;
     } else {
       settings.hasOpponent = false;
     }
   }
 
-  function setMyTurn(currentPlayer) {
-    if (currentPlayer == settings.playerId) {
+  // Update myTurn attribute
+  function setMyTurn() {
+    if (game.state.current_player_id == settings.playerId) {
       settings.myTurn = true;
     } else {
       settings.myTurn = false;
     }
   }
 
-  function checkGameOver(winner,playerId) {
-    if ( winner && (winner == playerId) ) {
+  // End the game if someone won
+  function tryGameOver() {
+    var winner = game.state.current_game_winner_id;
+    if ( winner && (winner == settings.playerId) ) {
       window.location.href = 'winner';
-    } else if ( winner && (winner != playerId) ) {
+    } else if ( winner && (winner != settings.playerId) ) {
       window.location.href = 'loser';
     }
   }
-
-  // STATE
-  // Hold all game data
-
-  var state = {}
 
   // API
 

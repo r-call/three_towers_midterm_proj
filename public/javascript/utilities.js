@@ -1,9 +1,17 @@
-var reload = (function() {
+var utilities = (function() {
 
-  function all(data) {
+  // IO
+
+  // Stores rocket.io
+  var io = null;
+
+  // PUBLIC
+
+  // Reload data, adjust game settings, update game state
+  function refreshAll(data) {
     game.state = JSON.parse(data);
       // puts fresh data on the page
-      allData();
+      reloadAllData();
       game.refresh();
       cards.refresh();
       attributes.refresh();
@@ -12,7 +20,7 @@ var reload = (function() {
   // PRIVATE
 
   // Reloads game data into the DOM
-  function allData() {
+  function reloadAllData() {
     $('#castle-indicator-p1').text(game.state.player_castle);
     $('#shield-indicator-p1').text(game.state.player_shield);
     $('#mana-indicator-p1').text(game.state.player_mana);
@@ -77,8 +85,14 @@ var reload = (function() {
       $('#played-card-container').addClass('invisible');
     }
   }
+
+
+  // API
+
   var api = {
-    all: all
+    refreshAll: refreshAll,
+    io:         io
   }
+
   return api;
 })();

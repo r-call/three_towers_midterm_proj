@@ -1,15 +1,19 @@
 var attributes = (function() {
 
+  // PUBLIC
+
+  // Refresh attribute displays
   function refresh() {
     maxStyleIndicators();
   }
 
   // Enough attributes to play card? Returns boolean
   function enough(cardNum) {
+    var card = game.state.cards[cardNum - 1];
     if (
-      game.state.cards[cardNum - 1].mana_cost <= game.state.player_mana &&
-      game.state.cards[cardNum - 1].stamina_cost <= game.state.player_stamina &&
-      game.state.cards[cardNum - 1].gold_cost <= game.state.player_gold
+      card.mana_cost <= game.state.player_mana &&
+      card.stamina_cost <= game.state.player_stamina &&
+      card.gold_cost <= game.state.player_gold
     ) {
       return true;
     } else {
@@ -22,15 +26,14 @@ var attributes = (function() {
   // Add class/remove class if max attribute level
   function maxStyleIndicators() {
     $('.castle-indicator').each(function() {
-      if ($(this).text().trim() == settings.maxHealth) {
+      if ($(this).text().trim() == settings.values.maxCastle) {
         $(this).addClass('max-attribute');
       } else {
         $(this).removeClass('max-attribute');
       }
     });
-
     $('.shield-indicator').each(function() {
-      if ($(this).text().trim() == settings.maxShield) {
+      if ($(this).text().trim() == settings.values.maxShield) {
         $(this).addClass('max-attribute');
       } else {
         $(this).removeClass('max-attribute');

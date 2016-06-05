@@ -1,6 +1,17 @@
 var errors = (function() {
 
-  var api = {}
+  // PUBLIC
+
+  // rocket.io error handling
+  function ioError(error) {
+    $('#player-alert-box').text("No connection!");
+  }
+
+  // API
+
+  var api = {
+    ioError: ioError
+  }
 
   return api
 })();
