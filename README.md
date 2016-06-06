@@ -1,7 +1,6 @@
 Sinatra
 =============
 
-(https://raw.github.com/r-call/three_towers_midterm_proj/master/public/images/screen_shot.png)
 
 Brought to you by Lighthouse Labs
 
@@ -12,3 +11,7 @@ Brought to you by Lighthouse Labs
 3. `rake db:seed`
 4. `thin start`
 3. Visit `http://localhost:3000/games/new` in your browser
+
+## Screenshot
+
+![alt tag](https://raw.github.com/r-call/three_towers_midterm_proj/master/public/images/screen_shot.png)
