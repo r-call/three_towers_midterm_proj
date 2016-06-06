@@ -1,0 +1,116 @@
+.indicator {
+  font-family: Futura;
+  border-radius:100%;
+  position: relative;
+}
+
+.castle-indicator {
+  height:150px;
+  width: 150px;
+  font-size:60px;
+  background-color: #F2F9BB;
+  vertical-align:middle;
+  line-height:150px;
+  text-align:center;
+}
+
+.castle-indicator.max-attribute {
+  font-weight:bolder;
+  font-size: 70px;
+  color: #269026;
+}
+
+.shield-indicator {
+  height: 90px;
+  width: 90px;
+  font-size:40px;
+  vertical-align:middle;
+  line-height: 90px;
+  background-color: #C7C7C7;
+  text-align: center;
+}
+
+.shield-indicator.max-attribute {
+  font-weight: bolder;
+  font-size: 50px;
+  color: #269026;
+}
+
+.indicator h1 {
+  font-size: 30px;
+  margin-bottom: 0;
+  padding-top:8px;
+}
+
+.indicator p {
+  position: relative;
+  margin: 0;
+}
+
+.mana-indicator {
+  height: 70px;
+  width: 70px;
+  background-color: #85CCD8;
+}
+
+.stamina-indicator {
+  height: 70px;
+  width: 70px;
+  background-color: #ff6666;
+}
+
+.gold-indicator {
+  height: 70px;
+  width: 70px;
+  background-color: #E6E62C;
+}
+
+#indicator-box-p1 {
+  position: absolute;
+}
+
+#indicator-box-p2 {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+}
+
+#castle-indicator-p1 {
+  margin: 10px 0px 15px 40px;
+}
+
+#shield-indicator-p1 {
+  margin-left:30px;
+}
+
+#mana-indicator-p1 {
+  margin-left:20px;
+}
+
+#stamina-indicator-p1 {
+  margin-left:15px;
+}
+
+#gold-indicator-p1 {
+  margin-left:10px;
+}
+
+#castle-indicator-p2 {
+  margin: 10px 40px 15px 0px;
+}
+
+#shield-indicator-p2 {
+  left: 70px;
+}
+
+#mana-indicator-p2 {
+  left: 100px;
+}
+
+#stamina-indicator-p2 {
+  left: 100px;
+}
+
+#gold-indicator-p2 {
+  left: 100px;
+}

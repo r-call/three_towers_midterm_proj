@@ -12,6 +12,7 @@ var game = (function() {
     tryGameOver();
     setHasOpponent();
     setMyTurn();
+    toggleOpponentAttributes();
     showStatus();
   }
 
@@ -46,6 +47,15 @@ var game = (function() {
       settings.hasOpponent = true;
     } else {
       settings.hasOpponent = false;
+    }
+  }
+
+  // Show/hide p2 attributes
+  function toggleOpponentAttributes() {
+    if (settings.hasOpponent = true) {
+      $('#indicator-box-p2').removeClass('invisible');
+    } else {
+      $('#indicator-box-p2').addClass('invisible');
     }
   }
 

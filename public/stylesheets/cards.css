@@ -1,0 +1,188 @@
+.basic-card-div {
+  border-radius: 4px;
+  -webkit-user-select: none;
+}
+
+.card {
+  width: 170px;
+  height: 280px;
+  display: inline-block;
+  margin: 0 auto;
+  padding-top: 2px;
+  text-align: left;
+  background-color: grey;
+  cursor: default;
+}
+
+/*CARD COMPONENTS*/
+
+.card-image {
+  background-color: white;
+  width: 90%;
+  height: 40%;
+  margin: 4% auto;
+}
+
+.card-image-image {
+  position: relative;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 4px;
+  -webkit-user-drag: none;
+}
+
+.card-title {
+  display: inline-block;
+  width: auto;
+  height: 7%;
+  margin: 0 auto;
+  padding-left: 10px;
+  font-family: Futura;
+  font-size: 16px;
+}
+
+.card-bottom-band {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-type-band {
+  background-color: white;
+  width: 90%;
+  height: 20px;
+  margin: 4% auto;
+}
+
+.card-description {
+  position: relative;
+  width: 90%;
+  height: 30%;
+  margin: auto 4.5% 0% auto;
+  vertical-align: bottom;
+  overflow: auto;
+  background-color: white;
+  font-weight: bold;
+}
+
+.card-description-text {
+  margin: 0;
+  font-family: Lato;
+  padding: 3%;
+  font-size: 11px;
+}
+
+.card-type-text {
+  margin: 0;
+  padding: 0 3%;
+  font-family: Lato;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.discard-button {
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  background-color: rgba(105,105,105,0.4);
+}
+
+.discard-button:hover {
+  color: #D83030;
+  transition: all 0.2s;
+}
+
+/*CARD ATTRIBUTE INDICATORS*/
+
+.card-attribute-indicator {
+  height: 1.25em;
+  width: 1.25em;
+  display: none;
+  float: right;
+  margin-top: 0.25em;
+  margin-right: 0.5em;
+  padding: 0 0 5px 0;
+  line-height: 1.25em;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 100%;
+  font-weight: bold;
+}
+
+.card-mana-indicator{
+  background-color: #85CCD8;
+}
+
+.card-stamina-indicator{
+  background-color: #ff6666;
+}
+
+.card-gold-indicator{
+  background-color: #E6E62C;
+}
+
+/*CARD COLOURS*/
+
+.attack {
+  background-color: #4BA2E6;
+  transition: all 0.3s;
+}
+
+.item {
+  background-color: #719E3B;
+  transition: all 0.3s;
+}
+
+.magic {
+  background-color: #9F67A2;
+  transition: all 0.3s;
+}
+
+/*INDIVIDUAL CARDS*/
+
+#deck {
+  position: relative;
+  margin-top: 1%;
+  margin-right: 0.5%;
+  text-align: center;
+  font-family: Futura;
+  font-size: 40px;
+  background-image: url("/images/deck.png");
+  background-size: 170px 280px;
+}
+
+#played-card-container {
+  position: relative;
+  overflow: auto;
+  margin-top: 1%;
+  margin-left: 0.5%;
+}
+
+#hand-card-1 {
+  transform: translateY(35px) rotate(-10deg);
+  position:relative;
+  z-index:1;
+}
+
+#hand-card-2 {
+  transform: translateY(10px) rotate(-5deg);
+  position:relative;
+  z-index:2;
+}
+
+#hand-card-3 {
+  position:relative;
+  z-index:3;
+}
+
+#hand-card-4 {
+  transform: translateY(10px)  rotate(5deg);
+  position:relative;
+  z-index:4;
+}
+
+#hand-card-5 {
+  transform: translateY(35px) rotate(10deg);
+  position:relative;
+  z-index:5;
+}
