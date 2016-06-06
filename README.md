@@ -1,6 +1,8 @@
 Sinatra
 =============
 
+(https://raw.github.com/r-call/three_towers_midterm_proj/master/public/images/screen_shot.png)
+
 Brought to you by Lighthouse Labs
 
 ## Getting Started
