@@ -13,20 +13,6 @@
   background-position: left top;
 }
 
-.shit-label {
-  float:right;
-  clear:both;
-  margin:0;
-  padding:0;
-  visibility: hidden;
-}
-
-.left-shit-label {
-  margin:0;
-  padding:0;
-  visibility: hidden;
-}
-
 #bottom-frame {
   position: relative;
   bottom: -2%;

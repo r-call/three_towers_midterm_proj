@@ -13,7 +13,6 @@ io.on :new_player do |msg,client|
 end
 
 io.on :play do |msg, client|
-  puts "@@@@@@@@@@@@@received 'play' from browser"
   @game = Game.find(client.channel.to_i)
   @game.game_action(msg['action'],msg['player'].to_i,msg['card'].to_i)
   # #individual update
@@ -22,19 +21,16 @@ io.on :play do |msg, client|
 
   #group update
   io.push :game_updated, "update your game, something changed", :channel => client.channel
-  puts "@@@@@@@@@@@sending 'game updated' to browsers"
 end
 
 
 
 io.on :reload_request do |msg, client|
-  puts "@@@@@@@@@@sending response to 'reload request'"
   #sends all game data back to client
   # get '/games/:id/reload' do
   @player = Player.find(msg['player'].to_i)
   pp @player
   @cards = @player.show_cards(msg['game'].to_i)
-  puts "@@@@@@@player id is #{msg['player']}"
   pp @cards
   @opponent = @player.find_opp(msg['game'])
   @game = Game.find(msg['game'])
@@ -64,5 +60,4 @@ io.on :reload_request do |msg, client|
     last_played_card: @game.show_last_card_played
   }
   io.push :reload, @total_data.to_json, :to => client.session
-  puts "@@@@@@@@@ json data pushed to browser"
 end

@@ -1,11 +1,7 @@
 .indicator {
   font-family: Futura;
-  text-align:left;
   border-radius:100%;
-}
-
-.indicator-box {
-  position: absolute;
+  position: relative;
 }
 
 .castle-indicator {
@@ -21,7 +17,7 @@
 .castle-indicator.max-attribute {
   font-weight:bolder;
   font-size: 70px;
-  color:green;
+  color: #269026;
 }
 
 .shield-indicator {
@@ -29,139 +25,92 @@
   width: 90px;
   font-size:40px;
   vertical-align:middle;
-  line-height:90px;
-  background-color:#82BD7B;
-  text-align:center;
+  line-height: 90px;
+  background-color: #C7C7C7;
+  text-align: center;
 }
 
 .shield-indicator.max-attribute {
-  font-weight:bolder;
+  font-weight: bolder;
   font-size: 50px;
-  color:green;
+  color: #269026;
+}
+
+.indicator h1 {
+  font-size: 30px;
+  margin-bottom: 0;
+  padding-top:8px;
+}
+
+.indicator p {
+  position: relative;
+  margin: 0;
 }
 
 .mana-indicator {
   height: 70px;
   width: 70px;
-  font-size: 30px;
   background-color: #85CCD8;
 }
+
 .stamina-indicator {
   height: 70px;
   width: 70px;
-  font-size: 30px;
   background-color: #ff6666;
 }
+
 .gold-indicator {
   height: 70px;
   width: 70px;
-  font-size: 30px;
   background-color: #E6E62C;
 }
 
-
-
 #indicator-box-p1 {
-
+  position: absolute;
 }
 
 #indicator-box-p2 {
-  right:0;
+  position: absolute;
+  display: inline-block;
+  right: 0;
 }
+
 #castle-indicator-p1 {
-  margin-left:40px;
+  margin: 10px 0px 15px 40px;
 }
 
 #shield-indicator-p1 {
   margin-left:30px;
 }
 
-
 #mana-indicator-p1 {
-  text-align:center;
-  line-height:60px;
-  vertical-align:middle;
   margin-left:20px;
 }
-#mana-regen-indicator-p1 {
-  position:relative;
-  right:40px;
-  bottom:25px;
-}
+
 #stamina-indicator-p1 {
-  text-align:center;
-  line-height:60px;
-  vertical-align:middle;
   margin-left:15px;
-  margin-top:-25px;
+}
 
-}
-#stamina-regen-indicator-p1 {
-  position:relative;
-  right:45px;
-  bottom:25px;
-}
 #gold-indicator-p1 {
-  text-align:center;
-  line-height:60px;
-  vertical-align:middle;
   margin-left:10px;
-  margin-top:-25px;
-
-}
-#gold-regen-indicator-p1 {
-  position:relative;
-  right:50px;
-  bottom:25px;
 }
 
 #castle-indicator-p2 {
-  margin-right:40px;
+  margin: 10px 40px 15px 0px;
 }
 
 #shield-indicator-p2 {
-  margin-right:30px;
-  left:75px;
+  left: 70px;
 }
 
 #mana-indicator-p2 {
-  text-align:center;
-  line-height:60px;
-  vertical-align:middle;
-  margin-right: 10px;
-  left:100px;
+  left: 100px;
 }
-#mana-regen-indicator-p2 {
-  position:relative;
-  left:-45px;
-  top:-25px;
-  float:right;
-}
+
 #stamina-indicator-p2 {
-  text-align:center;
-  line-height:60px;
-  vertical-align:middle;
-  left:105px;
-  top:-25px;
+  left: 100px;
+}
 
-}
-#stamina-regen-indicator-p2 {
-  float:right;
-  position:relative;
-  left:-40px;
-  top:-50px;
-}
 #gold-indicator-p2 {
-  text-align:center;
-  line-height:60px;
-  vertical-align:middle;
-  left:110px;
-  top:-50px;
-
-}
-#gold-regen-indicator-p2 {
-  float:right;
-  position:relative;
-  left:-35px;
-  top:-75px;
+  left: 100px;
 }

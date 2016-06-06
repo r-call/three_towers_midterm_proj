@@ -58,7 +58,7 @@
   position: relative;
   width: 90%;
   height: 30%;
-  margin: auto 4% 0% auto;
+  margin: auto 4.5% 0% auto;
   vertical-align: bottom;
   overflow: auto;
   background-color: white;
@@ -89,7 +89,7 @@
 
 .discard-button:hover {
   color: #D83030;
-  font-weight: bold;
+  transition: all 0.2s;
 }
 
 /*CARD ATTRIBUTE INDICATORS*/

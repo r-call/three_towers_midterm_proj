@@ -23,14 +23,14 @@ var utilities = (function() {
   function reloadAllData() {
     $('#castle-indicator-p1').text(game.state.player_castle);
     $('#shield-indicator-p1').text(game.state.player_shield);
-    $('#mana-indicator-p1').text(game.state.player_mana);
-    $('#stamina-indicator-p1').text(game.state.player_stamina);
-    $('#gold-indicator-p1').text(game.state.player_gold);
+    $('#mana-indicator-p1 h1 h1').text(game.state.player_mana);
+    $('#stamina-indicator-p1 h1').text(game.state.player_stamina);
+    $('#gold-indicator-p1 h1').text(game.state.player_gold);
     $('#castle-indicator-p2').text(game.state.opponent_castle);
     $('#shield-indicator-p2').text(game.state.opponent_shield);
-    $('#mana-indicator-p2').text(game.state.opponent_mana);
-    $('#stamina-indicator-p2').text(game.state.opponent_stamina);
-    $('#gold-indicator-p2').text(game.state.opponent_gold);
+    $('#mana-indicator-p2 h1').text(game.state.opponent_mana);
+    $('#stamina-indicator-p2 h1').text(game.state.opponent_stamina);
+    $('#gold-indicator-p2 h1').text(game.state.opponent_gold);
     $('#hand-card-1 .card-title').text(game.state.cards[0].name);
     $('#hand-card-1 .card-description p').text(game.state.cards[0].description);
     $('#hand-card-1 .card-type-band p').text(game.state.cards[0].card_type);

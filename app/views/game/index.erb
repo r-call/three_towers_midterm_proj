@@ -3,35 +3,30 @@
 </div>
 <div class="frame">
   <div id="indicator-box-p1" class="indicator-box">
-    <p class="left-shit-label">castle</p>
     <div id="castle-indicator-p1" class="castle-indicator p1-indicator indicator">
       <%= @player.castle %>
     </div>
-    <p class="left-shit-label">shield</p>
     <div id="shield-indicator-p1" class="shield-indicator p1-indicator indicator">
       <%= @player.shield %>
     </div>
-    <p class="left-shit-label">mana</p>
     <div id="mana-indicator-p1" class="mana-indicator p1-indicator indicator">
-      <%= @player.mana %>
+      <h1><%= @player.mana %></h1>
+      <p id="mana-regen-indicator-p1">
+        +<%= @player.mana_regen_rate %>
+      </p>
     </div>
-    <p id="mana-regen-indicator-p1">
-      +<%= @player.mana_regen_rate %>
-    </p>
-    <p class="left-shit-label">stamina</p>
     <div id="stamina-indicator-p1" class="stamina-indicator p1-indicator indicator">
-      <%= @player.stamina %>
+      <h1><%= @player.stamina %></h1>
+      <p id="stamina-regen-indicator-p1">
+        +<%= @player.stamina_regen_rate %>
+      </p>
     </div>
-    <p id="stamina-regen-indicator-p1">
-      +<%= @player.stamina_regen_rate %>
-    </p>
-    <p class="left-shit-label">gold</p>
     <div id="gold-indicator-p1" class="gold-indicator p1-indicator indicator">
-      <%= @player.gold %>
+      <h1><%= @player.gold %></h1>
+      <p id="gold-regen-indicator-p1">
+        +<%= @player.gold_regen_rate %>
+      </p>
     </div>
-    <p id="gold-regen-indicator-p1">
-      +<%= @player.gold_regen_rate %>
-    </p>
   </div>
 
   <div id="deck" class="card basic-card-div">
@@ -59,7 +54,32 @@
 
     </div>
   </div>
-
+  <div id="indicator-box-p2" class="indicator-box invisible">
+    <div id="castle-indicator-p2" class="castle-indicator p2-indicator indicator">
+      <%= @opponent ? @opponent.castle : '' %>
+    </div>
+    <div id="shield-indicator-p2" class="shield-indicator p2-indicator indicator">
+      <%= @opponent ? @opponent.shield : '' %>
+    </div>
+    <div id="mana-indicator-p2" class="mana-indicator p2-indicator indicator">
+      <h1><%= @opponent ? @opponent.mana : '' %></h1>
+      <p id="mana-regen-indicator-p2">
+        +<%= @opponent ? @opponent.mana_regen_rate : '' %>
+      </p>
+    </div>
+    <div id="stamina-indicator-p2" class="stamina-indicator p2-indicator indicator">
+      <h1><%= @opponent ? @opponent.stamina : '' %></h1>
+      <p id="stamina-regen-indicator-p2">
+        +<%= @opponent ? @opponent.stamina_regen_rate : '' %>
+      </p>
+    </div>
+    <div id="gold-indicator-p2" class="gold-indicator p2-indicator indicator">
+      <h1><%= @opponent ? @opponent.gold : '' %></h1>
+      <p id="gold-regen-indicator-p2">
+        +<%= @opponent ? @opponent.gold_regen_rate : '' %>
+      </p>
+    </div>
+  </div>
   <div id="bottom-frame">
     <div id="hand">
       <div id="hand-card-1" class="card held-card veilable basic-card-div subtle-shadow" value="1">
@@ -206,34 +226,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div id="indicator-box-p2" class="indicator-box">
-    <p class="shit-label">castle</p>
-    <div id="castle-indicator-p2" class="castle-indicator p2-indicator indicator">
-      <%= @opponent ? @opponent.castle : '' %>
-    </div>
-    <div id="shield-indicator-p2" class="shield-indicator p2-indicator indicator">
-      <%= @opponent ? @opponent.shield : '' %>
-    </div>
-    <div id="mana-indicator-p2" class="mana-indicator p2-indicator indicator">
-      <%= @opponent ? @opponent.mana : '' %>
-    </div>
-    <p id="mana-regen-indicator-p2">
-      +<%= @opponent ? @opponent.mana_regen_rate : '' %>
-    </p>
-    <div id="stamina-indicator-p2" class="stamina-indicator p2-indicator indicator">
-      <%= @opponent ? @opponent.stamina : '' %>
-    </div>
-    <p id="stamina-regen-indicator-p2">
-      +<%= @opponent ? @opponent.stamina_regen_rate : '' %>
-    </p>
-    <p class="shit-label">gold</p>
-    <div id="gold-indicator-p2" class="gold-indicator p2-indicator indicator">
-      <%= @opponent ? @opponent.gold : '' %>
-    </div>
-    <p id="gold-regen-indicator-p2">
-      +<%= @opponent ? @opponent.gold_regen_rate : '' %>
-    </p>
   </div>
 </div>
